@@ -1,0 +1,219 @@
+"#v_shadow":{
+	top:0,
+	bottom: "0",
+	left:0,
+	width: "100dp",
+	backgroundColor: "black",
+	opacity: "0.9"
+}
+
+"#listView":{
+	left: 0,
+	top: "40dp",
+	bottom: "40dp",
+	width: "100dp",
+	backgroundColor: "transparent",
+	separatorColor: "transparent"
+}
+
+"#lbl_remaining_rounds":{
+	bottom : 0,
+	width: "100dp",
+	height: "90dp",
+	font:{
+		fontSize: "36dp"
+	},
+	color: "white",
+	left: 0,
+	textAlign: "center"
+}
+
+"#row":{
+	height: "95dp",
+	backgroundColor: "transparent",
+	backgroundSelectedColor: "transparent"
+}
+
+"#v_row":{
+	width: "95dp",
+	height: "95dp",
+	backgroundImage: "/b_selected.png"
+}
+"#v_background_row":{
+	width: "85dp",
+	height: "85dp",
+	backgroundImage: "/icon_img.png", 
+}
+ 
+
+"#lbl_name":{
+	color: "white", 
+	textAlign: "center"
+}
+
+"#lbl_total_score":{
+	color: "white", 
+	textAlign: "center",
+	bottom: "10dp"
+}
+
+"#sv":{
+	left: "100dp",
+	right: 0,
+	layout: "vertical",
+	// scrollType:"vertical",
+	top: "70dp",
+	bottom: "70dp"
+}
+
+"#v_round":{
+	top:0,
+	left: "100dp",
+	right: 0,
+	height: "70dp",
+	backgroundColor: "#334D5C"
+}
+
+"#lbl_round":{
+	color:"white",
+	font:{
+		fontSize: "22dp",
+		fontWeight: "bold"
+	}
+}
+
+"#v_dart":{
+	left:"20dp",
+	right:"0",
+	height: "70dp"
+}
+
+"#v_blue_dart":{
+	top: "10dp",
+	left : "0dp",
+	width: "60dp",
+	height: "60dp",
+	select: true,
+	backgroundImage: "/b_round_idle.png"
+}
+
+"#img_blue_dart":{
+	width: "40dp",
+	height: "40dp",
+	image: "/dart_blue.png"
+}
+
+"#v_yellow_dart":{
+	top: "10dp",
+	right : "20dp",
+	width: "60dp",
+	height: "60dp",
+	select: false
+}
+
+"#img_yellow_dart":{
+	width: "40dp",
+	height: "40dp",
+	image: "/dart_yellow.png"
+}
+
+ 
+
+"#v_succeed":{
+	top: "10dp",
+	height: "50dp",
+	left:"20dp",
+	right:"20dp", 
+	// backgroundColor: "yellow"
+}
+ 
+
+".b_succeed":{
+	backgroundImage: "/no.png",
+	width: "30dp",
+	height: "30dp",
+	touchEnabled: false
+}
+"#b_succ_1":{
+	left: "7%"
+}
+"#b_succ_2":{
+	left: "37%"
+}
+"#b_succ_3":{
+	left: "67%"
+}
+
+".b_points":{ 
+	height: "50dp",
+	width: "30%",
+	left:0,
+	right:0,
+	color: "black",
+	borderColor: "#334D5C",
+	borderWidth: 1,
+	text: 0,
+	textAlign: "center",
+	borderRadius: 5
+}
+
+"#b_point_1":{
+	left: 0
+}
+
+"#b_point_2":{
+	left: "30%"
+}
+
+"#b_point_3":{
+	left: "60%"
+}
+
+
+
+
+"#v_nr_table":{
+	left: 0,
+	right:0,
+	top: "10dp",
+	// backgroundColor: "red"
+}
+
+".lbl_nr":{
+	height: "40dp",
+	width: "25%", 
+	color: "black",
+	borderColor: "#334D5C",
+	borderWidth: 1, 
+	textAlign: "center",
+	borderRadius: 5,
+	left: "10dp",
+	top: "2dp",
+	backgroundSelectedColor: "#327932"
+}
+
+"#v_next_round":{
+	bottom:0,
+	left: "100dp",
+	right: 0,
+	height: "70dp",
+	backgroundColor: "#334D5C"
+}
+
+
+"#lbl_next_round":{
+	color:"white",
+	font:{
+		fontSize: "22dp",
+		fontWeight: "bold"
+	},
+	touchEnabled: false
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<Alloy>
+	<Window class="container">
+		<View class="v_menu_button" id="v_start" top="20dp" onClick="startNewGame">
+			<Label top="50dp">New</Label>
+			<Label>Game</Label>
+		</View>
+		<View class="v_menu_button" id="v_continue">
+			<Label top="50dp">Continue</Label>
+			<Label>Game</Label>
+		</View>
+		<View class="v_menu_button" id="v_hostory">
+			<Label top="50dp">Show</Label>
+			<Label>History</Label>
+		</View>
+	</Window>
+</Alloy>
