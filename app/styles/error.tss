@@ -1,0 +1,31 @@
+"#v_intro":{
+	left: 0,
+	right:0,
+	top:0,
+	height: "50dp",
+	backgroundColor: "#334D5C"
+}
+
+"#lbl_intro":{
+	top: "20dp",
+	left:"20dp",
+	font:{
+		fontSize: "20dp",
+		fontWeight: "white"
+	},
+	color: "white"
+}
+
+"#lbl_msg":{
+	left: "20dp",
+	top: "70dp",
+	width: "60%",
+	font:{
+		fontSize: "20dp"
+	},
+	color: "#334D5C"
+}
+
+"#img":{
+	top: "80dp"
+}

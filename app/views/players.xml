@@ -36,8 +36,9 @@
 					<View id="v_intro">
 						<Label id="lbl_intro">How many rounds?</Label>
 					</View>
-					
+					 
 					<View id="v_content_round">
+						<ImageView id="img_what"></ImageView>
 						<View id="v_box">
 							<View id="v_button">
 								<Button id="b_minus" onClick="decrementRound"></Button>

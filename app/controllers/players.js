@@ -107,6 +107,12 @@ function decrementRound(){
 	if(parseInt($.lbl_round.text) > 1){
 		Alloy.Globals.ROUNDS -= 1;
 		$.lbl_round.text = Alloy.Globals.ROUNDS;
+	}else{
+		if (Titanium.Network.online) {
+			Alloy.createController("error", {"msg": "Really? You want a -1 round!",
+											 "img": "http://f.tqn.com/y/animatedtv/1/S/7/5/cwYoda_B_4C.jpg"}).getView().open();
+		
+		}
 	}
 }
 
@@ -114,6 +120,22 @@ function incrementRound(){
 	if(parseInt($.lbl_round.text) < 100){
 		Alloy.Globals.ROUNDS += 1;
 		$.lbl_round.text = Alloy.Globals.ROUNDS;
+		
+		if (Titanium.Network.online) {
+			if(parseInt($.lbl_round.text) == 60){
+				$.img_what.visible = true;
+				$.img_what.image = "https://s-media-cache-ak0.pinimg.com/736x/83/12/4c/83124cc9b36038b0e6b1622685e0e42b.jpg";
+				setTimeout(function(){
+					$.img_what.visible = false;
+				}, 2000);
+			}
+		}
+		
+	}else{
+		if (Titanium.Network.online) {
+			Alloy.createController("error", {"msg": "Dude!!! Do you really want to play more than 100 rounds?",
+											 "img": "http://tvandfilmtoys.com/wp-content/uploads/2012/03/Ratts-Tyerell-extras-2.jpg"}).getView().open();
+		}
 	}
 }
 

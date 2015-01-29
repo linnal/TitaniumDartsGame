@@ -113,6 +113,15 @@
 	borderRadius: 5
 }
 
+"#img_what":{
+	visible: false,
+	top: "20dp",
+	right: "20dp",
+	width: "170dp",
+	height: "200dp",
+	touchEnabled: "false"
+}
+
 
 "#v_content_round":{
 	height: "77%",

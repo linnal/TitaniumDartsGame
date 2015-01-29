@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="win_error" backgroundColor="white">
+		<View id="v_intro">
+			<Label id="lbl_intro">Wow!!!</Label> 		
+		</View>
+		
+		<ImageView id="img"></ImageView>
+		<Label id="lbl_msg"></Label>
+	</Window>
+</Alloy>
