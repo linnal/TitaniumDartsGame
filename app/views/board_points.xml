@@ -47,17 +47,17 @@
 	        </View>
 	        
 	        <View id="v_nr_table" layout="horizontal">
-	        	<Label id="lbl_0" class="lbl_nr" onClick="updateScorePoint">0</Label>
-	        	<Label id="lbl_5" class="lbl_nr" onClick="updateScorePoint">5</Label>
-	        	<Label id="lbl_10" class="lbl_nr" onClick="updateScorePoint">10</Label>
-	        	<Label id="lbl_20" class="lbl_nr" onClick="updateScorePoint">20</Label>
-	        	<Label id="lbl_30" class="lbl_nr" onClick="updateScorePoint">30</Label>
-	        	<Label id="lbl_40" class="lbl_nr" onClick="updateScorePoint">40</Label>
-	        	<Label id="lbl_50" class="lbl_nr" onClick="updateScorePoint">50</Label>
-	        	<Label id="lbl_60" class="lbl_nr" onClick="updateScorePoint">60</Label>
-	        	<Label id="lbl_80" class="lbl_nr" onClick="updateScorePoint">80</Label>
-	        	<Label id="lbl_100" class="lbl_nr" onClick="updateScorePoint">100</Label>
-	        	<Label id="lbl_130" class="lbl_nr" onClick="updateScorePoint">130</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">0</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">5</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">10</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">20</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">30</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">40</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">50</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">60</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">80</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">100</Label>
+	        	<Label class="lbl_nr" onClick="updateScorePoint">130</Label>
 	        </View>
 	        
 

@@ -57,8 +57,7 @@ exports.getPlayerTotalScore = function(name, timestamp){
 						 
 	var res = 0;
 	
-	for(var i=0; i<coll.length-1; i++){
-		Ti.API.info(JSON.stringify(coll.at(i)));
+	for(var i=0; i<coll.length-1; i++){ 
 		var score = coll.at(i).get("score").split(",");
 		
 		res += (parseInt(score[0]) + parseInt(score[1]) + parseInt(score[2]));

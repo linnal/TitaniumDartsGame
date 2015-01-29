@@ -29,6 +29,14 @@
 	color: "white"
 }
 
+"#b_trash":{
+	right: "20dp",
+	width : "40dp",
+	height: "40dp",
+	backgroundImage: "/trash_idle.png",
+	select: false
+}
+
 "#listView":{ 
 	height: "64%",
 	separatorColor: "transparent"

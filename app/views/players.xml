@@ -1,10 +1,11 @@
 <Alloy> 
-	<Window backgroundColor="white">
+	<Window id="win_players" backgroundColor="white">
 		
 		<ScrollableView id="sv"> 
 			<View id="v_add_players" class="sv_views">
 				<View id="v_intro">
 					<Label id="lbl_intro">Who is playing?</Label>
+					<Button id="b_trash" onClick="deleteFromList"></Button>			
 				</View>
 				<ListView id="listView" defaultItemTemplate="template"> 
 		            <Templates> 
