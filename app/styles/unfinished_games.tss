@@ -1,0 +1,52 @@
+"#row":{
+	height: "70dp",
+	backgroundColor: "red"
+}
+
+
+"#listView":{  
+	separatorColor: "transparent"
+}
+
+"#lbl_date":{
+	left: "10dp",
+	width: "50%",
+	font:{
+		fontSize: "22dp"
+	},
+	color: "black"
+}
+
+"#v_rounds":{
+	right: "10dp",
+	width: "50%"
+}
+
+"#lbl_rounds":{
+	top: "10dp",
+	font: {
+		fontSize: "20dp"
+	},
+	color: "black",
+	textAlign: "center"
+}
+
+"#lbl_round_ok":{
+	left: "10dp",
+	bottom: "10dp",
+	width: "40dp",
+	color: "black",
+	borderRadius: 5,
+	borderWidth: 1,
+	backgroundColor: "green"
+}
+
+"#lbl_round_ko":{
+	bottom: "10dp",
+	width: "40dp",
+	color: "black",
+	right : "10dp",
+	borderRadius: 5,
+	borderWidth: 1,
+	backgroundColor: "red"
+}

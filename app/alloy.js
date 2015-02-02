@@ -13,6 +13,7 @@
 
 Alloy.Collections.player = Alloy.createCollection("player");
 Alloy.Collections.game =   Alloy.createCollection("game");
+Alloy.Collections.game_round =   Alloy.createCollection("game_round");
 
 
 Alloy.Globals.GAME_TIMESTAMP = null;

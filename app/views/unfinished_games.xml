@@ -1,0 +1,18 @@
+<Alloy>
+	<Window class="container">
+		<ListView id="list">
+			<Templates> 
+                <ItemTemplate name="template" id="template">
+                	<View id="row">
+                    	<Label bindId="lbl_date" id="lbl_date"></Label>
+                    	<View id="v_rounds">
+                    		<Label bindId="lbl_rounds" id="lbl_date"></Label>
+                    		<Label bindId="lbl_round_ok" id="lbl_round_ok"></Label>
+                    		<Label bindId="lbl_round_ko" id="lbl_round_ko"></Label>
+                    	</View>
+                    </View>
+                </ItemTemplate>
+            </Templates> 
+		</ListView>
+	</Window>
+</Alloy>

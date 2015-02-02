@@ -100,6 +100,7 @@ function startGame(){
 		Alloy.Globals.GAME_TIMESTAMP = timestamp;
 		Alloy.createController("board_points", {"players": lsPlayers}).getView().open();
 	});
+	db.saveGameRounds(Alloy.Globals.GAME_TIMESTAMP, $.lbl_round.text);
 }
 
 

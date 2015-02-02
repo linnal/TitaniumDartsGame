@@ -10,7 +10,7 @@ function startNewGame(){
 }
 
 function continueGame(){
-	
+	Alloy.createController("unfinished_games").getView().open();
 }
 
 function showHistory(){

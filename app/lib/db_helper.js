@@ -48,8 +48,7 @@ exports.setGamePlayerScore = function(name, round, score, color, timestamp){
 	player.save();
 };
 
-
-
+ 
 exports.getPlayerTotalScore = function(name, timestamp){
 	var coll = Alloy.Collections.game;
 	coll.fetch({query: { statement: "SELECT * FROM game WHERE player=? and timestamp=? ORDER BY round", 
@@ -64,6 +63,28 @@ exports.getPlayerTotalScore = function(name, timestamp){
 	}
 	
 	return res;
+};
+
+
+
+
+exports.saveGameRounds = function(id, round){
+	var gameRoundModel = Alloy.createModel('game_round',
+						{
+							"game_id": id,
+							"rounds": round
+						});
+						
+	gameRoundModel.save();
+	
+	Alloy.Collections.game_round.add(gameRoundModel);
+};
+
+exports.getGameRounds = function(id){
+	var collection = Alloy.Collections.game_round;
+	collection.fetch({query: {statement: "SELECT * FROM game_round WHERE id=?", params:[id]}});
+	
+	return collection.at(0);
 };
 
 
