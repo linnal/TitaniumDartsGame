@@ -9,7 +9,7 @@ function startNewGame(){
 	Alloy.createController("players").getView().open();
 }
 
-function continueGame(){
+function continueGame(){ 
 	Alloy.createController("unfinished_games").getView().open();
 }
 

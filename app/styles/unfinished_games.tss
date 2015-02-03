@@ -1,6 +1,33 @@
+
+"#v_intro":{
+	left: 0,
+	right:0,
+	height: "50dp",
+	backgroundColor: "#334D5C"
+}
+
+"#lbl_intro":{
+	top: "20dp",
+	left:"20dp",
+	font:{
+		fontSize: "20dp",
+		fontWeight: "white"
+	},
+	color: "white"
+}
+
+"#b_trash":{
+	right: "20dp",
+	width : "40dp",
+	height: "40dp",
+	backgroundImage: "/trash_idle.png",
+	select: false
+}
+
 "#row":{
 	height: "70dp",
-	backgroundColor: "red"
+	layout:"horizontal"
+	// backgroundColor: "red"
 }
 
 
@@ -12,41 +39,55 @@
 	left: "10dp",
 	width: "50%",
 	font:{
-		fontSize: "22dp"
+		fontSize: "20dp"
 	},
-	color: "black"
+	color: "black",
+	textAlign: "center",
+	text: "asd",
+	id:""
 }
 
 "#v_rounds":{
-	right: "10dp",
-	width: "50%"
+	// right: "10dp",
+	width: "35%"
 }
-
+ 
 "#lbl_rounds":{
 	top: "10dp",
+	left:0,
+	right:0,
 	font: {
-		fontSize: "20dp"
+		fontSize: "18dp"
 	},
 	color: "black",
 	textAlign: "center"
 }
 
 "#lbl_round_ok":{
-	left: "10dp",
+	left: "20dp",
 	bottom: "10dp",
 	width: "40dp",
 	color: "black",
 	borderRadius: 5,
 	borderWidth: 1,
-	backgroundColor: "green"
+	borderColor: "green",
+	textAlign: "center"
 }
 
 "#lbl_round_ko":{
 	bottom: "10dp",
 	width: "40dp",
 	color: "black",
-	right : "10dp",
+	right : "20dp",
 	borderRadius: 5,
 	borderWidth: 1,
-	backgroundColor: "red"
+	borderColor: "red",
+	textAlign: "center"
+}
+
+"#b_del":{
+	backgroundImage: "/no.png",
+	visible: false,
+	width: "30dp",
+	height: "30dp"
 }

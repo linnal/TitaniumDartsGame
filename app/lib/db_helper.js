@@ -88,6 +88,52 @@ exports.getGameRounds = function(id){
 };
 
 
+exports.getPendingGames = function(){
+	var result = [];
+	
+	var collection_round = Alloy.Collections.game_round;
+	collection_round.fetch({query: "SELECT * FROM game_round"});
+	var collection_game = Alloy.Collections.game;
+	for(var i=0; i<collection_round.length; i++){
+		var id = collection_round.at(i).get("game_id");
+		var rounds_total = parseInt(collection_round.at(i).get("rounds"));
+		collection_game.fetch({query:{statement: "SELECT DISTINCT round FROM game WHERE timestamp=?", params:[id]}});
+		
+		if(collection_game.length < rounds_total){
+			result.push({"id": parseFloat(id), "rounds_total": rounds_total, "rounds_done": collection_game.length});
+		}
+	}
+	return result;
+};
+
+
+exports.deletePlayer = function(name){
+	Ti.API.info(name);
+	var collection_player = Alloy.Collections.game_round;
+	collection_player.fetch({query:{statement: "SELECT * FROM player WHERE name=?", params:[name]}});
+	Ti.API.info(JSON.stringify(collection_player));
+	for(var i=0; i<collection_player.length; i++){
+		collection_player.at(i).destroy(); 
+	} 
+};
+
+
+exports.deleteGame = function(id){
+	 
+	var collection_round = Alloy.Collections.game_round;
+	collection_round.fetch({query:{statement: "SELECT * FROM game_round WHERE game_id=?", params:[id]}});
+	var collection_game = Alloy.Collections.game;
+	collection_game.fetch({query:{statement: "SELECT * FROM game WHERE timestamp=?", params:[id]}});
+	
+	for(var i=0; i<collection_round.length; i++){
+		collection_round.at(i).destroy(); 
+	}
+	for(var i=0; i<collection_game.length; i++){
+		collection_game.at(i).destroy(); 
+	}
+};
+
+
 
 
 

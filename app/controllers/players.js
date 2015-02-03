@@ -1,6 +1,7 @@
 var lsPlayers = [];
 var nrOfPlayers = 0;
 var whichSvView = 0;
+var db = require("db_helper");
 
 var coll_player = Alloy.Collections.player; 
 coll_player.fetch({query:'SELECT * FROM player ORDER BY name'});
@@ -48,14 +49,16 @@ $.listView.addEventListener("itemclick", function(e){
 		}
 		e.section.updateItemAt(e.itemIndex, item); 
 	}else{
+		db.deletePlayer(item["lbl_name"]["text"]);
 		e.section.deleteItemsAt(e.itemIndex, 1, []);
 	}
 });
 
 
-$.win_players.addEventListener("android:back", function(){
+$.win_players.addEventListener("android:back", function(){ 
 	if(whichSvView == 1){
 		$.sv.scrollToView(0);
+		whichSvView = 0;
 	}else{
 		$.win_players.close();
 	}
@@ -81,8 +84,7 @@ function insertIntoRow(){
 
 
 function addNewPlayer(){
-	if($.txt_field.value.length > 2 && nrOfPlayers < 100){ 
-		var db = require("db_helper");
+	if($.txt_field.value.length > 2 && nrOfPlayers < 100){  
 		db.addPlayer($.txt_field.value); 
 	}
 }
@@ -96,11 +98,15 @@ function next(){
 function startGame(){ 
 	var db = require("db_helper"); 
 	var timestamp = new Date().getTime();
-	db.createGameModel(lsPlayers, timestamp, 1,  function(){
-		Alloy.Globals.GAME_TIMESTAMP = timestamp;
-		Alloy.createController("board_points", {"players": lsPlayers}).getView().open();
-	});
-	db.saveGameRounds(Alloy.Globals.GAME_TIMESTAMP, $.lbl_round.text);
+	if(lsPlayers.length > 0){
+		db.createGameModel(lsPlayers, timestamp, 1,  function(){
+			Alloy.Globals.GAME_TIMESTAMP = timestamp;
+			db.saveGameRounds(Alloy.Globals.GAME_TIMESTAMP, $.lbl_round.text);
+			Alloy.createController("board_points", {"players": lsPlayers}).getView().open();
+		}); 
+	}else{
+		alert("Please select who is playing!");
+	}
 }
 
 
