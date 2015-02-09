@@ -9,7 +9,7 @@ exports.addPlayer = function(name){
 };
 
 exports.createGameModel = function(names, timestamp, round, callback){
-	Ti.API.info("createGameModel " + JSON.stringify(names));
+	 
 	for(var i in names){
 		var game = Alloy.createModel("game",{
 			"player": names[i],
@@ -32,7 +32,7 @@ exports.createGameModel = function(names, timestamp, round, callback){
  
 exports.getGamePlayerScore = function(name, round, timestamp){
 	var coll = Alloy.Collections.game;
-	coll.fetch({query: { statement: "SELECT * FROM game WHERE player=? and round=? and timestamp=?", 
+	coll.fetch({query: { statement: "SELECT * FROM game WHERE player=? and round=? and timestamp=? ORDER BY timestamp", 
 						 params:[name, round, timestamp]}});
 						 
 	var res = coll.at(0);
@@ -40,10 +40,9 @@ exports.getGamePlayerScore = function(name, round, timestamp){
 	return res;
 };
 
-exports.setGamePlayerScore = function(name, round, score, color, timestamp){ 
-	Ti.API.info("setGamePlayerScore " + score+ " " + name + " " + round + " " + timestamp);
+exports.setGamePlayerScore = function(name, round, score, color, timestamp){  
 	var player = exports.getGamePlayerScore(name, round, timestamp); 
-	Ti.API.info(JSON.stringify(player));
+	 
 	player.set({"score" : score});
 	player.set({"color" : color});
 	
@@ -150,7 +149,7 @@ exports.getGamePlayers = function(id){
 exports.getPlayerSumScore = function(id, round){
 	var collection_game = Alloy.Collections.game;
 	collection_game.fetch({query:{statement: "SELECT  player, score FROM game WHERE timestamp=? and round<=?", params:[id, round]}});
-	// Ti.API.info("===> "+JSON.stringify(collection_game));
+	 
 	var result = {};
 	var name = ""; 
 	

@@ -1,6 +1,6 @@
 var db = require("db_helper");
-var args = arguments[0] || {};
-Ti.API.info(JSON.stringify(args));
+var args = arguments[0] || {}; 
+
 var lblUpdateScore = null;
 var lsSelectedRowIndex = 0;
 var round = args.round || 1;
@@ -43,8 +43,7 @@ $.listView.addEventListener('itemclick', function(e){
 	populatePlayerScores(item["lbl_name"]["text"], round);
 });
 
-function checkForNextRound(){
-	Ti.API.info("checkForNextRound " + round);
+function checkForNextRound(){ 
 	$.lbl_round.text = "Round " + round;
 	$.lbl_remaining_rounds.text = Alloy.Globals.ROUNDS - round;
 	if(Alloy.Globals.ROUNDS > 1 && round < Alloy.Globals.ROUNDS){
@@ -62,7 +61,7 @@ function savePlayerScore(name, round, score, color){
 function populatePlayerScores(name, round){
 
 	var playerData = db.getGamePlayerScore(name, round, Alloy.Globals.GAME_TIMESTAMP);
-	Ti.API.info("populatePlayerScores " + JSON.stringify(playerData));
+	 
 	var score = (playerData.get("score")).split(","); 
 	
 	$.b_point_1.text = score[0];
@@ -194,7 +193,7 @@ function updateScorePoint(e){
 		
 		var item = section.getItemAt(lsSelectedRowIndex);
 		var previous_score = db.getPlayerTotalScore(item["lbl_name"]["text"], Alloy.Globals.GAME_TIMESTAMP);
-		// Ti.API.info("SCORE: " + previous_score);
+		 
 		item["lbl_total_score"]["text"] = previous_score 
 										  + parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
 		section.updateItemAt(lsSelectedRowIndex, item); 
@@ -205,10 +204,11 @@ function resetGame(){
 	// save the last user before goind into next round
 	if(lsSelectedRowIndex != null){
 		var previous_item = section.getItemAt(lsSelectedRowIndex);
-		Ti.API.info("previous item " + JSON.stringify(previous_item));
-		previous_item["v_select"]["backgroundImage"] = "transparent";
-		previous_item["lbl_total_score"]["text"] = parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
-		section.updateItemAt(lsSelectedRowIndex, previous_item); 
+		var previous_score = db.getPlayerTotalScore(previous_item["lbl_name"]["text"], Alloy.Globals.GAME_TIMESTAMP); 
+		previous_item["v_select"]["backgroundImage"] = "transparent"; 
+		previous_item["lbl_total_score"]["text"] = previous_score 
+										  + parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
+ 		section.updateItemAt(lsSelectedRowIndex, previous_item); 
 		
 		savePlayerScore(previous_item["lbl_name"]["text"], round, 
 						$.b_point_1.text +","+ $.b_point_2.text +","+ $.b_point_3.text, 
@@ -236,9 +236,7 @@ function createNextRound(){
 }
 
 function nextRound(){
-	var nextRound = round + 1;
-	Ti.API.info("now round");
-	Ti.API.info("now round " + round);
+	var nextRound = round + 1; 
 	if(nextRound < Alloy.Globals.ROUNDS + 1){
 		resetGame();
 		

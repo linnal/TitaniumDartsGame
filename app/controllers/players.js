@@ -18,7 +18,7 @@ coll_player.on('add', function(e){
 	var newPlayer = {
 					"lbl_name":{"text": e.get("name")},
 					"lbl_char":{"text": (e.get("name")).charAt(0).toUpperCase()},
-					"b_play":{"backgroundImage": "/b_round_idle.png", "play": true}};
+					"b_play":{"backgroundImage": "/b_round_idle.png", "play": false}};
 					
 	section.insertItemsAt(section.items.length, [newPlayer]);
 	
@@ -32,7 +32,8 @@ coll_player.on('add', function(e){
 
 
 $.listView.addEventListener("itemclick", function(e){
-	var item = e.section.getItemAt(e.itemIndex); 
+	var item = e.section.getItemAt(e.itemIndex);  
+	
 	if(!$.b_trash.select){
 		if(!item["b_play"]["play"]){ 
 			item["b_play"]["backgroundImage"] = "/b_round_present.png";

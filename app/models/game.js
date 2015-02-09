@@ -4,9 +4,9 @@ exports.definition = {
 		    "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
 		    "player": "TEXT",
 		    "score":"TEXT",
-		    "timestamp": "TEXT",
+		    "timestamp": "REAL",
 		    "color": "TEXT",
-		    "round": "TEXT"
+		    "round": "REAL"
 		},
 		adapter: {
 			type: "sql",
