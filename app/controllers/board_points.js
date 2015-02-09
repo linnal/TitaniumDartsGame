@@ -1,6 +1,6 @@
 var db = require("db_helper");
 var args = arguments[0] || {};
-
+Ti.API.info(JSON.stringify(args));
 var lblUpdateScore = null;
 var lsSelectedRowIndex = 0;
 var round = args.round || 1;
@@ -44,6 +44,9 @@ $.listView.addEventListener('itemclick', function(e){
 });
 
 function checkForNextRound(){
+	Ti.API.info("checkForNextRound " + round);
+	$.lbl_round.text = "Round " + round;
+	$.lbl_remaining_rounds.text = Alloy.Globals.ROUNDS - round;
 	if(Alloy.Globals.ROUNDS > 1 && round < Alloy.Globals.ROUNDS){
 		$.lbl_next_round.text ="Round " + (round+1) + " >>";
 	}else{
@@ -230,6 +233,8 @@ function createNextRound(){
 
 function nextRound(){
 	var nextRound = round + 1;
+	Ti.API.info("now round");
+	Ti.API.info("now round " + round);
 	if(nextRound < Alloy.Globals.ROUNDS + 1){
 		resetGame();
 		
