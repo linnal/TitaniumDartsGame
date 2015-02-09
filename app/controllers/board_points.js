@@ -62,7 +62,7 @@ function savePlayerScore(name, round, score, color){
 function populatePlayerScores(name, round){
 
 	var playerData = db.getGamePlayerScore(name, round, Alloy.Globals.GAME_TIMESTAMP);
-	
+	Ti.API.info("populatePlayerScores " + JSON.stringify(playerData));
 	var score = (playerData.get("score")).split(","); 
 	
 	$.b_point_1.text = score[0];
@@ -112,6 +112,10 @@ function insertIntoRow(){
 		data.push(dict); 
 		
 		first += 1;
+		
+		if(first == 1){
+			populatePlayerScores(i, round);
+		}
 	}
 	
 	return data;
