@@ -9,6 +9,7 @@ exports.addPlayer = function(name){
 };
 
 exports.createGameModel = function(names, timestamp, round, callback){
+	Ti.API.info("createGameModel " + JSON.stringify(names));
 	for(var i in names){
 		var game = Alloy.createModel("game",{
 			"player": names[i],
@@ -40,8 +41,9 @@ exports.getGamePlayerScore = function(name, round, timestamp){
 };
 
 exports.setGamePlayerScore = function(name, round, score, color, timestamp){ 
-	Ti.API.info("setGamePlayerScore " + score);
+	Ti.API.info("setGamePlayerScore " + score+ " " + name + " " + round + " " + timestamp);
 	var player = exports.getGamePlayerScore(name, round, timestamp); 
+	Ti.API.info(JSON.stringify(player));
 	player.set({"score" : score});
 	player.set({"color" : color});
 	
@@ -107,11 +109,10 @@ exports.getPendingGames = function(){
 };
 
 
-exports.deletePlayer = function(name){
-	Ti.API.info(name);
-	var collection_player = Alloy.Collections.game_round;
+exports.deletePlayer = function(name){ 
+	var collection_player = Alloy.Collections.player;
 	collection_player.fetch({query:{statement: "SELECT * FROM player WHERE name=?", params:[name]}});
-	Ti.API.info(JSON.stringify(collection_player));
+ 
 	for(var i=0; i<collection_player.length; i++){
 		collection_player.at(i).destroy(); 
 	} 
@@ -133,6 +134,39 @@ exports.deleteGame = function(id){
 	}
 };
 
+exports.getGamePlayers = function(id){
+	var result = [];
+	
+	var collection_game = Alloy.Collections.game;
+	collection_game.fetch({query:{statement: "SELECT DISTINCT player FROM game WHERE timestamp=?", params:[id]}});
+	 
+	for(var i=0; i<collection_game.length; i++){
+		result.push(collection_game.at(i).get("player"));
+	}
+	
+	return result;
+};
+
+exports.getPlayerSumScore = function(id, round){
+	var collection_game = Alloy.Collections.game;
+	collection_game.fetch({query:{statement: "SELECT  player, score FROM game WHERE timestamp=? and round<=?", params:[id, round]}});
+	// Ti.API.info("===> "+JSON.stringify(collection_game));
+	var result = {};
+	var name = ""; 
+	
+	for(var i=0; i<collection_game.length; i++){ 
+		name = collection_game.at(i).get("player");
+		var sc = collection_game.at(i).get("score").split(",");
+		var score = (parseInt(sc[0]) + parseInt(sc[1]) + parseInt(sc[2]));
+ 
+		if(result[name])
+			result[name] += score;
+		else
+			result[name] = score; 
+	}
+
+	return result;
+};
 
 
 

@@ -3,9 +3,10 @@ var args = arguments[0] || {};
 
 var lblUpdateScore = null;
 var lsSelectedRowIndex = 0;
-var round = 1;
+var round = args.round || 1;
 var color = "blue";
-
+var ls_players = [];
+ 
 var section = Ti.UI.createListSection({items: insertIntoRow()}); 
 $.listView.sections = [section];
 
@@ -95,16 +96,31 @@ function populatePlayerScores(name, round){
 
 function insertIntoRow(){
 	var data = [];
-	if(args.players){
-		for(var i=0; i<args.players.length; i++){  
-			data.push({  
-				"lbl_name":{"text": args.players[i]},
-				"lbl_total_score":{"text": 0},
-				"v_select":{"backgroundImage": (i==0 ? "/b_selected.png" :"transparent")}
-			});
+	
+	var lsPlayers = db.getPlayerSumScore(Alloy.Globals.GAME_TIMESTAMP, round); 
+ 	var first = 0;
+	for(var i in lsPlayers){ 
+		var dict = {};
+		ls_players.push(i);
+		dict["lbl_name"]={"text": i};
+		dict["v_select"]={"backgroundImage": (first==0 ? "/b_selected.png" :"transparent")}; 
+		dict["lbl_total_score"]={"text": lsPlayers[i]};  
+		
+		data.push(dict); 
+		
+		first += 1;
+	}
+	
+	return data;
+}
+
+function checkIfListHasPlayer(name){
+	for(var i in ls_players){
+		if(name == ls_players[i]){
+			return true;
 		}
 	}
-	return data;
+	return false;
 }
 
 function selectBlueDart(){ 
@@ -182,7 +198,7 @@ function resetGame(){
 	// save the last user before goind into next round
 	if(lsSelectedRowIndex != null){
 		var previous_item = section.getItemAt(lsSelectedRowIndex);
-		Ti.API.info(JSON.stringify(previous_item));
+		Ti.API.info("previous item " + JSON.stringify(previous_item));
 		previous_item["v_select"]["backgroundImage"] = "transparent";
 		previous_item["lbl_total_score"]["text"] = parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
 		section.updateItemAt(lsSelectedRowIndex, previous_item); 
@@ -205,8 +221,10 @@ function resetGame(){
 }
 
 function createNextRound(){ 
-	db.createGameModel(args.players, Alloy.Globals.GAME_TIMESTAMP, round, function(){ 
-		populatePlayerScores(args.players[0], round);
+	db.createGameModel(ls_players, Alloy.Globals.GAME_TIMESTAMP, round, function(){
+		for(var i=0; i<ls_players.length; i++){ 
+			populatePlayerScores(ls_players[i], round);
+		}
 	});
 }
 

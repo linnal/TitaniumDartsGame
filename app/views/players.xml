@@ -22,8 +22,6 @@
 		            </Templates> 
 				</ListView>
 				
-				
-				
 				<View id="v_add_new">
 					<TextField id="txt_field" onReturn="addNewPlayer"></TextField>
 					<Button id="b_add" onClick="addNewPlayer"></Button>
