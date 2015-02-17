@@ -1,5 +1,5 @@
 <Alloy>
-	<Window backgroundColor="white">
+	<Window id="win_board_point" backgroundColor="white">
 		<View id="v_shadow"></View>
 		<ListView id="listView" defaultItemTemplate="template" separatorColor='transparent' >
 			 <Templates>  

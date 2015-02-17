@@ -11,7 +11,7 @@ $.listView.addEventListener("itemclick", function(e){
 		Alloy.Globals.GAME_TIMESTAMP = parseFloat(item["lbl_date"]["id"]);
 		Alloy.Globals.ROUNDS = (parseInt(item["lbl_round_ok"]["text"]) + parseInt(item["lbl_round_ko"]["text"]));
 		var lsPlayers = db.getGamePlayers(item["lbl_date"]["id"]);
-		Alloy.createController("board_points", {"players": lsPlayers, "round": parseInt(item["lbl_round_ok"]["text"])}).getView().open();
+		openWindow(Alloy.createController("board_points", {"players": lsPlayers, "round": parseInt(item["lbl_round_ok"]["text"])}).getView());
 	}else{
 		e.section.deleteItemsAt(e.itemIndex, 1, []);
 		db.deleteGame(item["lbl_date"]["id"]);

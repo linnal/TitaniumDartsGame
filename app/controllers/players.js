@@ -103,7 +103,7 @@ function startGame(){
 		db.createGameModel(lsPlayers, timestamp, 1,  function(){
 			Alloy.Globals.GAME_TIMESTAMP = timestamp;
 			db.saveGameRounds(Alloy.Globals.GAME_TIMESTAMP, $.lbl_round.text);
-			Alloy.createController("board_points", {"round":1}).getView().open();
+			openWindow(Alloy.createController("board_points", {"round":1}).getView());
 		}); 
 	}else{
 		alert("Please select who is playing!");

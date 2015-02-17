@@ -1,0 +1,60 @@
+"#v_intro":{
+	left: 0,
+	right:0,
+	height: "50dp",
+	backgroundColor: "#334D5C"
+}
+
+"#lbl_intro":{
+	top: "20dp",
+	left:"20dp",
+	font:{
+		fontSize: "20dp",
+		fontWeight: "white"
+	},
+	color: "white"
+}
+
+"#listView":{ 
+	// height: "64%",
+	separatorColor: "transparent"
+}
+
+"#template":{
+	height: "70dp"
+}
+
+"#row": {
+	height: "70dp"
+}
+
+"#lbl_pos":{
+	left: "10dp",
+	height: "50dp",
+	width: "50dp",
+	font:{
+		fontSize: "26dp",
+		fontWeight: "bold"
+	},
+	color: "#e05b48"
+}
+
+"#lbl_name":{
+	left: "10dp",
+	height: "50dp",
+	width: "50%",
+	font:{
+		fontSize: "22dp"
+	},
+	color: "black"
+}
+
+"#lbl_point":{
+	left: "10dp",
+	height: "50dp",
+	width: "70dp",
+	font:{
+		fontSize: "20dp"
+	},
+	color: "black"
+}

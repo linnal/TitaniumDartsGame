@@ -1,0 +1,18 @@
+<Alloy>
+	<Window id="win_winners" class="container">
+		<View id="v_intro">
+			<Label id="lbl_intro">Winners</Label> 		
+		</View>
+		<ListView id="listView" defaultItemTemplate="template"> 
+            <Templates> 
+                <ItemTemplate name="template" id="template">
+                	<View id="row" layout="horizontal">
+                    	<Label bindId="lbl_pos" id="lbl_pos" /> 
+                    	<Label bindId="lbl_name" id="lbl_name" /> 
+                    	<Label bindId="lbl_point" id="lbl_point" />  
+                    </View>
+                </ItemTemplate> 
+            </Templates> 
+		</ListView>
+	</Window>
+</Alloy>
