@@ -19,15 +19,7 @@
 	backgroundColor: "#334D5C"
 }
 
-"#lbl_intro":{
-	top: "20dp",
-	left:"20dp",
-	font:{
-		fontSize: "20dp",
-		fontWeight: "white"
-	},
-	color: "white"
-}
+
 
 "#b_trash":{
 	right: "20dp",
@@ -37,7 +29,7 @@
 	select: false
 }
 
-"#listView":{ 
+"#listView":{
 	height: "64%",
 	separatorColor: "transparent"
 }
@@ -51,7 +43,7 @@
 }
 
 "#pic":{
-	backgroundImage: "/icon_img.png", 
+	backgroundImage: "/icon_img.png",
 	width: "70dp",
 	height: "70dp",
 	left: "10dp"
@@ -76,8 +68,8 @@
 	width: "40dp",
 	height: "40dp"
 }
- 
- 
+
+
 "#v_add_new":{
 	left: "20dp",
 	right: "20dp",
@@ -127,7 +119,7 @@
 	height: "77%",
 	// backgroundColor: "red"
 }
- 
+
 
 "#v_box":{
 	height: "150dp",

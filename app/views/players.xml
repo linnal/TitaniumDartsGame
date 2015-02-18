@@ -1,40 +1,42 @@
-<Alloy> 
+<Alloy>
 	<Window id="win_players" backgroundColor="white">
-		
-		<ScrollableView id="sv"> 
+
+		<ScrollableView id="sv">
 			<View id="v_add_players" class="sv_views">
 				<View id="v_intro">
+            		<Label id="lbl_back" plarform="ios" onClick="closeWin"></Label>
 					<Label id="lbl_intro">Who is playing?</Label>
-					<Button id="b_trash" onClick="deleteFromList"></Button>			
+					<Button id="b_trash" onClick="deleteFromList"></Button>
 				</View>
-				<ListView id="listView" defaultItemTemplate="template"> 
-		            <Templates> 
+				<ListView id="listView" defaultItemTemplate="template">
+		            <Templates>
 		                <ItemTemplate name="template" id="template">
 		                	<View id="row">
 		                    	<View id="pic">
 		                    		<Label bindId="lbl_char" id="lbl_char">A</Label>
 		                    	</View>
-		                    	<Label bindId="lbl_name" id="lbl_name" /> 
+		                    	<Label bindId="lbl_name" id="lbl_name" />
 		                    	<Button bindId="b_play" id="b_play" touchEnabled="false"/>
 		                    </View>
 		                </ItemTemplate>
-		
-		            </Templates> 
+
+		            </Templates>
 				</ListView>
-				
+
 				<View id="v_add_new">
 					<TextField id="txt_field" onReturn="addNewPlayer"></TextField>
 					<Button id="b_add" onClick="addNewPlayer"></Button>
 				</View>
-				
+
 				<Button id="b_next" class="b_large" onClick="next">Next</Button>
 			</View>
 			<View id="v_set_rpund" class="sv_views">
 				<View id="v_set_rounds" class="sv_views">
 					<View id="v_intro">
+            		<Label id="lbl_back" plarform="ios" onClick="closeWin"></Label>
 						<Label id="lbl_intro">How many rounds?</Label>
 					</View>
-					 
+
 					<View id="v_content_round">
 						<ImageView id="img_what"></ImageView>
 						<View id="v_box">
@@ -47,11 +49,11 @@
 							</View>
 						</View>
 					</View>
-					
+
 					<Button id="b_start" class="b_large" onClick="startGame">Start</Button>
 				</View>
-			</View>	
+			</View>
 		</ScrollableView>
-		
+
 	</Window>
 </Alloy>

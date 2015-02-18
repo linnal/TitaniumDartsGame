@@ -6,15 +6,6 @@
 	backgroundColor: "#334D5C"
 }
 
-"#lbl_intro":{
-	top: "20dp",
-	left:"20dp",
-	font:{
-		fontSize: "20dp",
-		fontWeight: "white"
-	},
-	color: "white"
-}
 
 "#b_trash":{
 	right: "20dp",
@@ -31,7 +22,7 @@
 }
 
 
-"#listView":{  
+"#listView":{
 	separatorColor: "transparent"
 }
 
@@ -51,7 +42,7 @@
 	// right: "10dp",
 	width: "35%"
 }
- 
+
 "#lbl_rounds":{
 	top: "10dp",
 	left:0,

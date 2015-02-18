@@ -256,3 +256,8 @@ function nextRound(){
 	}
 
 }
+
+
+function closeWin(){
+	closeWindow($.win_board_point);
+}

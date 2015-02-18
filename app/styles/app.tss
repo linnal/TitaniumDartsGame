@@ -1,4 +1,42 @@
+'Window[platform=ios]':{
+    navBarHidden:true,
+    top:"20dp"
+}
+
+
+
 ".container": {
 	backgroundColor:"white",
 	layout:"vertical"
+}
+
+
+"#lbl_back":{
+    left: "5dp",
+    font:{
+        fontSize: "30dp",
+        fontWeight: "bold"
+    },
+    color: "white",
+    text: "<",
+    backgroundSelectedColor: "green"
+}
+
+"#lbl_intro":{
+    top: "20dp",
+    left:"30dp",
+    font:{
+        fontSize: "20dp"
+    },
+    color: "white"
+}
+
+"#lbl_back_title":{
+    top: "15dp",
+    left:"25dp",
+    font:{
+        fontSize: "18dp"
+    },
+    text:"Back",
+    color: "white"
 }

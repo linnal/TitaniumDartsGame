@@ -7,6 +7,10 @@
 	opacity: "0.9"
 }
 
+".top_back":{
+	top: "5dp"
+}
+
 "#listView":{
 	left: 0,
 	top: "40dp",
@@ -42,17 +46,17 @@
 "#v_background_row":{
 	width: "85dp",
 	height: "85dp",
-	backgroundImage: "/icon_img.png", 
+	backgroundImage: "/icon_img.png",
 }
- 
+
 
 "#lbl_name":{
-	color: "white", 
+	color: "white",
 	textAlign: "center"
 }
 
 "#lbl_total_score":{
-	color: "white", 
+	color: "white",
 	textAlign: "center",
 	bottom: "10dp"
 }
@@ -117,16 +121,16 @@
 	image: "/dart_yellow.png"
 }
 
- 
+
 
 "#v_succeed":{
 	top: "10dp",
 	height: "50dp",
 	left:"20dp",
-	right:"20dp", 
+	right:"20dp",
 	// backgroundColor: "yellow"
 }
- 
+
 
 ".b_succeed":{
 	backgroundImage: "/no.png",
@@ -144,7 +148,7 @@
 	left: "67%"
 }
 
-".b_points":{ 
+".b_points":{
 	height: "50dp",
 	width: "30%",
 	left:0,
@@ -181,10 +185,10 @@
 
 ".lbl_nr":{
 	height: "40dp",
-	width: "25%", 
+	width: "25%",
 	color: "black",
 	borderColor: "#334D5C",
-	borderWidth: 1, 
+	borderWidth: 1,
 	textAlign: "center",
 	borderRadius: 5,
 	left: "10dp",

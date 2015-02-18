@@ -1,51 +1,53 @@
 <Alloy>
 	<Window id="win_board_point" backgroundColor="white">
 		<View id="v_shadow"></View>
+        <Label id="lbl_back" class="top_back" plarform="ios" onClick="closeWin" ></Label>
+        <Label id="lbl_back_title" plarform="ios" onClick="closeWin"></Label>
 		<ListView id="listView" defaultItemTemplate="template" separatorColor='transparent' >
-			 <Templates>  
-	           	<ItemTemplate id="row" name="template" bindId="id_question"> 
+			 <Templates>
+	           	<ItemTemplate id="row" name="template" bindId="id_question">
 					<View bindId="v_select" id="v_row">
 						<View id="v_background_row">
 							<Label bindId="lbl_name" id="lbl_name"></Label>
 							<Label bindId="lbl_total_score" id="lbl_total_score"></Label>
 					 	</View>
 				 	</View>
-	           	
+
 	           	</ItemTemplate>
 	        </Templates>
-        </ListView> 
-        
+        </ListView>
+
         <Label id="lbl_remaining_rounds"></Label>
-        
+
         <View id="v_round">
         	<Label id="lbl_round">Round 1</Label>
         </View>
-	        
+
 	    <View id="sv">
 	    	<View id="v_dart">
 		        <View id="v_blue_dart" onClick="selectBlueDart">
 		        	<ImageView id="img_blue_dart"></ImageView>
 		        </View>
-		        
+
 		        <View id="v_yellow_dart" onClick="selectYellowDart">
 		        	<ImageView id="img_yellow_dart"></ImageView>
 		        </View>
 		    </View>
-	         
+
 	        <View id="v_succeed">
-	        		
-	        		<Label class="b_points" id="b_point_1" onClick="updateScore1"></Label>       	
-	        		<Label class="b_points" id="b_point_2" onClick="updateScore2"></Label>       	
-	        		<Label class="b_points" id="b_point_3" onClick="updateScore3"></Label> 
-	        		
-	        		<Button class="b_succeed" id="b_succ_1"></Button>       	
-	        		<Button class="b_succeed" id="b_succ_2"></Button>       	
-	        		<Button class="b_succeed" id="b_succ_3"></Button>       	
+
+	        		<Label class="b_points" id="b_point_1" onClick="updateScore1"></Label>
+	        		<Label class="b_points" id="b_point_2" onClick="updateScore2"></Label>
+	        		<Label class="b_points" id="b_point_3" onClick="updateScore3"></Label>
+
+	        		<Button class="b_succeed" id="b_succ_1"></Button>
+	        		<Button class="b_succeed" id="b_succ_2"></Button>
+	        		<Button class="b_succeed" id="b_succ_3"></Button>
 	        	<!-- </View> -->
 	        	<!-- <View id="v_points"> -->
-	       
+
 	        </View>
-	        
+
 	        <View id="v_nr_table" layout="horizontal">
 	        	<Label class="lbl_nr" onClick="updateScorePoint">0</Label>
 	        	<Label class="lbl_nr" onClick="updateScorePoint">5</Label>
@@ -59,13 +61,13 @@
 	        	<Label class="lbl_nr" onClick="updateScorePoint">100</Label>
 	        	<Label class="lbl_nr" onClick="updateScorePoint">130</Label>
 	        </View>
-	        
+
 
 	     </View>
-	     
+
 	     	<View id="v_next_round" onClick="nextRound">
 	        	<Label id="lbl_next_round">Next Round</Label>
 	        </View>
-        
+
 	</Window>
 </Alloy>

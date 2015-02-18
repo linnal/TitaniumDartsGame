@@ -1,11 +1,12 @@
 <Alloy>
 	<Window id="win_unfinished_game" class="container">
 		<View id="v_intro">
+            <Label id="lbl_back" plarform="ios" onClick="closeWin"></Label>
 			<Label id="lbl_intro">Pending games</Label>
-			<Button id="b_trash" onClick="deleteFromList"></Button>			
+			<Button id="b_trash" onClick="deleteFromList"></Button>
 		</View>
 		<ListView id="listView" defaultItemTemplate="template">
-			<Templates> 
+			<Templates>
                 <ItemTemplate name="template" id="template">
                 	<View id="row">
                     	<Label bindId="lbl_date" id="lbl_date"></Label>
@@ -17,7 +18,7 @@
                     	<Button bindId="b_del" id="b_del"></Button>
                     </View>
                 </ItemTemplate>
-            </Templates> 
+            </Templates>
 		</ListView>
 	</Window>
 </Alloy>

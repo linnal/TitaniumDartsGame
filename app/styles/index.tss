@@ -1,21 +1,4 @@
- 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "white",
-	font:{
-		fontSize: "24dp",
-		fontWeight: "bold"
-	},
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	touchEnabled: false
+"#index":{
+	titleAttributes: "asdf"
 }
- 
- 
-".v_menu_button":{
-	backgroundImage: "/b_large.png",
-	height: "30%",
-	width: "60%",
-	layout: "vertical"
-}
- 
+

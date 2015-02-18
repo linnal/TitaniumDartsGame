@@ -5,17 +5,9 @@
 	backgroundColor: "#334D5C"
 }
 
-"#lbl_intro":{
-	top: "20dp",
-	left:"20dp",
-	font:{
-		fontSize: "20dp",
-		fontWeight: "white"
-	},
-	color: "white"
-}
 
-"#listView":{ 
+
+"#listView":{
 	// height: "64%",
 	separatorColor: "transparent"
 }
