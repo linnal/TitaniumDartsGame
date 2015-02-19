@@ -5,6 +5,11 @@
 	backgroundColor: "#334D5C"
 }
 
+"#v_container":{
+	layout:"vertical",
+	height: "100%",
+	width: "100%"
+}
 
 
 "#listView":{

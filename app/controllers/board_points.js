@@ -41,6 +41,8 @@ $.listView.addEventListener('itemclick', function(e){
 	lsSelectedRowIndex = e.itemIndex;
 
 	populatePlayerScores(item["lbl_name"]["text"], round);
+
+	updateScore1();
 });
 
 $.win_board_point.addEventListener("android:back", function(){
@@ -121,6 +123,9 @@ function insertIntoRow(){
 		}
 	}
 
+	//autocheck the first score box
+	updateScore1();
+
 	return data;
 }
 
@@ -155,10 +160,10 @@ function updateScore1(e){
 	$.b_succ_1.visible = false;
 	$.b_point_1.borderColor = "#e75151";
 
-	if(! (parseInt($.b_point_2.text) > 0))
+	if(! (parseInt($.b_point_2.text) >= 0))
 		$.b_succ_2.visible = true;
 	$.b_point_2.borderColor = "#334D5C";
-	if(! (parseInt($.b_point_3.text) > 0))
+	if(! (parseInt($.b_point_3.text) >= 0))
 		$.b_succ_3.visible = true;
 	$.b_point_3.borderColor = "#334D5C";
 
@@ -168,10 +173,10 @@ function updateScore2(e){
 	$.b_succ_2.visible = false;
 	$.b_point_2.borderColor = "#e75151";
 
-	if(! (parseInt($.b_point_1.text) > 0))
+	if(! (parseInt($.b_point_1.text) >= 0))
 		$.b_succ_1.visible = true;
 	$.b_point_1.borderColor = "#334D5C";
-	if(! (parseInt($.b_point_3.text) > 0))
+	if(! (parseInt($.b_point_3.text) >= 0))
 		$.b_succ_3.visible = true;
 	$.b_point_3.borderColor = "#334D5C";
 
@@ -181,10 +186,10 @@ function updateScore3(e){
 	$.b_succ_3.visible = false;
 	$.b_point_3.borderColor = "#e75151";
 
-	if(! (parseInt($.b_point_2.text) > 0))
+	if(! (parseInt($.b_point_2.text) >= 0))
 		$.b_succ_2.visible = true;
 	$.b_point_2.borderColor = "#334D5C";
-	if(! (parseInt($.b_point_1.text) > 0))
+	if(! (parseInt($.b_point_1.text) >= 0))
 		$.b_succ_1.visible = true;
 	$.b_point_1.borderColor = "#334D5C";
 
@@ -206,9 +211,11 @@ function updateScorePoint(e){
 
 		var item = section.getItemAt(lsSelectedRowIndex);
 		var previous_score = db.getPlayerTotalScore(item["lbl_name"]["text"], Alloy.Globals.GAME_TIMESTAMP);
-
-		item["lbl_total_score"]["text"] = previous_score
-										  + parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
+		var sc1 = (parseInt($.b_point_1.text) < 0 ? 0 : parseInt($.b_point_1.text));
+		var sc2 = (parseInt($.b_point_2.text) < 0 ? 0 : parseInt($.b_point_2.text));
+		var sc3 = (parseInt($.b_point_3.text) < 0 ? 0 : parseInt($.b_point_3.text));
+		var sc= previous_score + sc1 + sc2 + sc3;
+		item["lbl_total_score"]["text"] =  (sc < 0 ? 0 : sc);
 		section.updateItemAt(lsSelectedRowIndex, item);
 
 		selectNextPointBox(lblUpdateScore.id);
@@ -221,8 +228,11 @@ function resetGame(){
 		var previous_item = section.getItemAt(lsSelectedRowIndex);
 		var previous_score = db.getPlayerTotalScore(previous_item["lbl_name"]["text"], Alloy.Globals.GAME_TIMESTAMP);
 		previous_item["v_select"]["backgroundImage"] = "transparent";
-		previous_item["lbl_total_score"]["text"] = previous_score
-										  + parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
+		var sc1 = (parseInt($.b_point_1.text) < 0 ? 0 : parseInt($.b_point_1.text));
+		var sc2 = (parseInt($.b_point_2.text) < 0 ? 0 : parseInt($.b_point_2.text));
+		var sc3 = (parseInt($.b_point_3.text) < 0 ? 0 : parseInt($.b_point_3.text));
+		var sc= previous_score + sc1 + sc2 + sc3;
+		previous_item["lbl_total_score"]["text"] =  (sc < 0 ? 0 : sc);
  		section.updateItemAt(lsSelectedRowIndex, previous_item);
 
 		savePlayerScore(previous_item["lbl_name"]["text"], round,
@@ -247,25 +257,32 @@ function createNextRound(){
 		for(var i=0; i<ls_players.length; i++){
 			populatePlayerScores(ls_players[i], round);
 		}
+		//autocheck the first score box
+		updateScore1();
 	});
 }
 
 function nextRound(){
-	var nextRound = round + 1;
-	if(nextRound < Alloy.Globals.ROUNDS + 1){
-		resetGame();
-
-		round += 1;
-		$.lbl_round.text = "Round " + nextRound;
-		$.lbl_remaining_rounds.text = parseInt($.lbl_remaining_rounds.text) - 1;
-		checkForNextRound();
-
-		createNextRound();
+	var unscoredPlayers = db.getUnscoredPlayers(Alloy.Globals.GAME_TIMESTAMP, round);
+	Ti.API.info(unscoredPlayers.join(","));
+	if(unscoredPlayers.length > 1 || ($.b_point_1.text + $.b_point_2.text + $.b_point_3.text) < 0){
+		alert("You have not scored " +  unscoredPlayers.join(", ") + " yet. Please score them before going to Round " + (round+1));
 	}else{
-		resetGame();
-		openWindow(Alloy.createController("winners_game").getView());
-	}
+		var nextRound = round + 1;
+		if(nextRound < Alloy.Globals.ROUNDS + 1){
+			resetGame();
 
+			round += 1;
+			$.lbl_round.text = "Round " + nextRound;
+			$.lbl_remaining_rounds.text = parseInt($.lbl_remaining_rounds.text) - 1;
+			checkForNextRound();
+
+			createNextRound();
+		}else{
+			resetGame();
+			openWindow(Alloy.createController("winners_game").getView());
+		}
+	}
 }
 
 
