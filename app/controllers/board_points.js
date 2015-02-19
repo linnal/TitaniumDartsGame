@@ -191,6 +191,15 @@ function updateScore3(e){
 	lblUpdateScore = $.b_point_3;
 }
 
+function selectNextPointBox(id){
+	Ti.API.info(id);
+	if(id == "b_point_1"){
+		updateScore2();
+	}else if(id == "b_point_2"){
+		updateScore3();
+	}
+}
+
 function updateScorePoint(e){
 	if(lblUpdateScore != null){
 		lblUpdateScore.text = e.source.text;
@@ -201,6 +210,8 @@ function updateScorePoint(e){
 		item["lbl_total_score"]["text"] = previous_score
 										  + parseInt($.b_point_1.text) + parseInt($.b_point_2.text) + parseInt($.b_point_3.text) ;
 		section.updateItemAt(lsSelectedRowIndex, item);
+
+		selectNextPointBox(lblUpdateScore.id);
 	}
 }
 

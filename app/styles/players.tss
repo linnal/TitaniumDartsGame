@@ -5,16 +5,24 @@
 }
 
 ".sv_views":{
-	layout: "vertical",
+	// layout: "vertical",
 	left: 0,
 	right:0,
 	top:0,
 	bottom:0
 }
 
+"#v_set_rpund":{
+	layout: "vertical"
+}
+"#v_set_rounds":{
+	layout: "vertical"
+}
+
 "#v_intro":{
 	left: 0,
 	right:0,
+	top: 0,
 	height: "50dp",
 	backgroundColor: "#334D5C"
 }
@@ -30,9 +38,12 @@
 }
 
 "#listView":{
+	top: "50dp",
 	height: "64%",
 	separatorColor: "transparent"
 }
+
+
 
 "#template":{
 	height: "70dp"
@@ -55,7 +66,7 @@
 
 "#lbl_name":{
 	left: "90dp",
-	color: "black",
+	color: "white",
 	font: {
 		fontSize: "22dp",
 		// fontWeight: "bold"
@@ -71,6 +82,7 @@
 
 
 "#v_add_new":{
+	bottom: "70dp",
 	left: "20dp",
 	right: "20dp",
 	height:"70dp"
@@ -79,8 +91,12 @@
 "#txt_field":{
 	left: 0,
 	right: "60dp",
-	color: "black",
+	color: "white",
 	height: "60dp",
+	font:{
+		fontSize: "22dp",
+		fontWeight:"bold"
+	},
 	borderColor: "#334D5C",
 	borderRadius: 5
 }
@@ -90,6 +106,10 @@
 	width: "50dp",
 	height: "50dp",
 	backgroundImage: "/b_add.png"
+}
+
+"#b_next":{
+	bottom:"10dp"
 }
 
 ".b_large":{

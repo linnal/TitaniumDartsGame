@@ -1,8 +1,8 @@
 <Alloy>
 	<Window id="win_board_point" backgroundColor="white">
 		<View id="v_shadow"></View>
-        <Label id="lbl_back" class="top_back" plarform="ios" onClick="closeWin" ></Label>
-        <Label id="lbl_back_title" plarform="ios" onClick="closeWin"></Label>
+        <Label id="lbl_back" class="top_back" platform="ios" onClick="closeWin" ></Label>
+        <Label id="lbl_back_title" platform="ios" onClick="closeWin"></Label>
 		<ListView id="listView" defaultItemTemplate="template" separatorColor='transparent' >
 			 <Templates>
 	           	<ItemTemplate id="row" name="template" bindId="id_question">

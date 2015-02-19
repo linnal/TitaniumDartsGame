@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="win_winners" class="container">
 		<View id="v_intro">
-            <Label id="lbl_back" plarform="ios" onClick="closeWin"></Label>
+            <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
 			<Label id="lbl_intro">Winners</Label>
 		</View>
 		<ListView id="listView" defaultItemTemplate="template">

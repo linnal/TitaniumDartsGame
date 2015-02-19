@@ -1,24 +1,27 @@
 <Alloy>
-	<Window id="win_unfinished_game" class="container">
-		<View id="v_intro">
-            <Label id="lbl_back" plarform="ios" onClick="closeWin"></Label>
-			<Label id="lbl_intro">Pending games</Label>
-			<Button id="b_trash" onClick="deleteFromList"></Button>
-		</View>
-		<ListView id="listView" defaultItemTemplate="template">
-			<Templates>
-                <ItemTemplate name="template" id="template">
-                	<View id="row">
-                    	<Label bindId="lbl_date" id="lbl_date"></Label>
-                    	<View id="v_rounds">
-                    		<Label bindId="lbl_rounds" id="lbl_rounds"></Label>
-                    		<Label bindId="lbl_round_ok" id="lbl_round_ok"></Label>
-                    		<Label bindId="lbl_round_ko" id="lbl_round_ko"></Label>
-                    	</View>
-                    	<Button bindId="b_del" id="b_del"></Button>
-                    </View>
-                </ItemTemplate>
-            </Templates>
-		</ListView>
+	<Window id="win_unfinished_game">
+        <View id="v_shandow"></View>
+        <View id="v_container">
+    		<View id="v_intro">
+                <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
+    			<Label id="lbl_intro">Pending games</Label>
+    			<Button id="b_trash" onClick="deleteFromList"></Button>
+    		</View>
+    		<ListView id="listView" defaultItemTemplate="template">
+    			<Templates>
+                    <ItemTemplate name="template" id="template">
+                    	<View id="row">
+                        	<Label bindId="lbl_date" id="lbl_date"></Label>
+                        	<View id="v_rounds">
+                        		<Label bindId="lbl_rounds" id="lbl_rounds"></Label>
+                        		<Label bindId="lbl_round_ok" id="lbl_round_ok"></Label>
+                        		<Label bindId="lbl_round_ko" id="lbl_round_ko"></Label>
+                        	</View>
+                        	<Button bindId="b_del" id="b_del"></Button>
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+    		</ListView>
+        </View>
 	</Window>
 </Alloy>

@@ -1,10 +1,12 @@
 <Alloy>
-	<Window id="index" class="container" platform="android">
-		     <Require src="home"/>
+	<Window id="index" platform="android">
+            <View id="v_shandow"></View>
+            <Require src="home"/>
 	</Window>
-	<NavigationWindow id="index" class="container" platform="ios">
+	<NavigationWindow id="index" platform="ios">
 		<Window id="win_home">
-			  <Require src="home"/>
+            <View id="v_shandow"></View>
+			<Require src="home"/>
 		</Window>
 	</NavigationWindow>
 </Alloy>

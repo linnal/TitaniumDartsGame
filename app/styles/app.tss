@@ -1,6 +1,10 @@
 'Window[platform=ios]':{
     navBarHidden:true,
-    top:"20dp"
+    top:"20dp",
+    backgroundImage: "/background.png"
+}
+'Window[platform=android]':{
+    backgroundImage: "/background.png"
 }
 
 
@@ -39,4 +43,14 @@
     },
     text:"Back",
     color: "white"
+}
+
+"#v_shandow":{
+    top: 0,
+    bottom: 0,
+    left:0,
+    right:0,
+    // height: "150dp",
+    backgroundColor: "black",
+    opacity: "0.5"
 }
