@@ -60,6 +60,14 @@ function checkForNextRound(){
 }
 
 function savePlayerScore(name, round, score, color){
+
+	var sc = score.split(",");
+	if(sc[0] != -1 || sc[1] != -1 || sc[2] != -1){
+		score = (sc[0] > -1 ? sc[0] : 0);
+		score += "," + (sc[1] > -1 ? sc[1] : 0);
+		score += "," + (sc[2] > -1 ? sc[2] : 0);
+	}
+
 	db.setGamePlayerScore(name, round, score, color, Alloy.Globals.GAME_TIMESTAMP);
 }
 

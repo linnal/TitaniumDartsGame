@@ -1,34 +1,33 @@
+"Label":{
+	color: "white"
+}
+
+
 "#v_container":{
 	layout:"vertical",
 	height: "100%",
 	width: "100%"
 }
 
-"#v_intro":{
-	left: 0,
-	right:0,
-	height: "50dp",
-	backgroundColor: "#334D5C"
-}
-
-
-"#b_trash":{
-	right: "20dp",
-	width : "40dp",
-	height: "40dp",
-	backgroundImage: "/trash_idle.png",
-	select: false
-}
 
 "#row":{
 	height: "70dp",
-	layout:"horizontal"
+	layout:"horizontal",
+	touchEnabled: false,
+	backgroundColor: "transparent"
 	// backgroundColor: "red"
 }
 
 
 "#listView":{
-	separatorColor: "transparent"
+	separatorColor: "transparent",
+	backgroundColor: "transparent"
+}
+
+"#template":{
+	height: "80dp",
+	backgroundColor: "transparent",
+	selectedBackgroundColor: "gray"
 }
 
 "#lbl_date":{
@@ -37,7 +36,6 @@
 	font:{
 		fontSize: "20dp"
 	},
-	color: "black",
 	textAlign: "center",
 	text: "asd",
 	id:""
@@ -55,7 +53,6 @@
 	font: {
 		fontSize: "18dp"
 	},
-	color: "black",
 	textAlign: "center"
 }
 
@@ -63,7 +60,6 @@
 	left: "20dp",
 	bottom: "10dp",
 	width: "40dp",
-	color: "black",
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: "green",
@@ -73,7 +69,6 @@
 "#lbl_round_ko":{
 	bottom: "10dp",
 	width: "40dp",
-	color: "black",
 	right : "20dp",
 	borderRadius: 5,
 	borderWidth: 1,

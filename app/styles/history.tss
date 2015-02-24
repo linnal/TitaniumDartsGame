@@ -1,0 +1,81 @@
+"Label":{
+    color: "white"
+}
+
+"#v_container":{
+    layout: "vertical"
+}
+
+"#listView":{
+    backgroundColor: "transparent",
+    separatorColor: "transparent",
+}
+
+"#template":{
+    height: "100dp",
+    backgroundColor: "transparent"
+}
+
+"#row":{
+    top:0,
+    bottom:0,
+    left:0,
+    right:0,
+    backgroundColor: "yellow",
+}
+
+
+"#lbl_date":{
+    top: "10dp",
+    left: "10dp",
+    font:{
+        fontSize: "22dp"
+    }
+}
+
+"#lbl_rounds":{
+    top: "10dp",
+    right: "60dp"
+}
+
+"#v_players":{
+    left: 0,
+    right: "60dp",
+    top:"50dp",
+    backgroundColor: "red",
+    layout: "horizontal"
+}
+
+"#b_del":{
+    top: "5dp",
+    right: "10dp",
+    width: "40dp",
+    height: "40dp",
+    backgroundImage: "/no.png",
+    visible: false
+}
+
+"#b_more":{
+    top : "50dp",
+    right: "10dp",
+    width: "40dp",
+    height: "40dp",
+    backgroundImage: "/ok.png"
+}
+
+"#b_view_table":{
+    bottom: 0,
+    right: "10dp",
+    width: "70dp",
+    height: "30dp",
+    text: "asdfsd",
+    backgroundColor: "yellow",
+    visible: false
+}
+
+
+
+
+
+
+

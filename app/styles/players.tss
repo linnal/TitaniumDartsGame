@@ -4,6 +4,11 @@
 	height: "100%"
 }
 
+
+"#v_intro":{
+	top: 0
+}
+
 ".sv_views":{
 	// layout: "vertical",
 	left: 0,
@@ -19,38 +24,26 @@
 	layout: "vertical"
 }
 
-"#v_intro":{
-	left: 0,
-	right:0,
-	top: 0,
-	height: "50dp",
-	backgroundColor: "#334D5C"
-}
 
-
-
-"#b_trash":{
-	right: "20dp",
-	width : "40dp",
-	height: "40dp",
-	backgroundImage: "/trash_idle.png",
-	select: false
-}
 
 "#listView":{
 	top: "50dp",
 	height: "64%",
-	separatorColor: "transparent"
+	separatorColor: "transparent",
+	backgroundColor: "transparent"
 }
 
 
 
 "#template":{
-	height: "70dp"
+	height: "70dp",
+	backgroundColor: "transparent",
+	selectedBackgroundColor: "transparent"
 }
 
 "#row": {
-	height: "70dp"
+	height: "70dp",
+	touchEnabled: false
 }
 
 "#pic":{

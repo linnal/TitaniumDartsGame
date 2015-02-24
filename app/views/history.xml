@@ -1,0 +1,26 @@
+<Alloy>
+    <Window id="win_history">
+        <View id="v_shandow"></View>
+        <View id="v_container">
+            <View id="v_intro">
+                <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
+                <Label id="lbl_intro">Game History</Label>
+                <Button id="b_trash" onClick="deleteFromList"></Button>
+            </View>
+            <ListView id="listView" defaultItemTemplate="template">
+                <Templates>
+                    <ItemTemplate name="template" bindid="templ" id="template">
+                        <View bindid="b_row" id="row">
+                            <!-- <Label bindId="lbl_date" id="lbl_date"></Label>
+                            <Label bindId="lbl_rounds" id="lbl_rounds"></Label>
+                            <View bindId="v_players" id="v_players"></View>
+                            <Button bindId="b_del" id="b_del"></Button> -->
+                            <Button bindId="b_more" id="b_more" onClick="showMore"></Button>
+                            <!-- <Button bindId="b_view_table" id="b_view_table"></Button> -->
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+            </ListView>
+        </View>
+    </Window>
+</Alloy>

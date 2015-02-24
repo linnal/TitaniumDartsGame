@@ -186,7 +186,27 @@ exports.getUnscoredPlayers = function(id, round){
 }
 
 
+exports.getFinishedGames = function(){
+	var result = [];
 
+	var collection_round = Alloy.Collections.game_round;
+	collection_round.fetch({query: "SELECT * FROM game_round"});
+	var collection_game = Alloy.Collections.game;
+	for(var i=0; i<collection_round.length; i++){
+		var id = parseFloat(collection_round.at(i).get("game_id"));
+		var rounds_total = parseInt(collection_round.at(i).get("rounds"));
+		collection_game.fetch({query:{statement: "SELECT DISTINCT round FROM game WHERE timestamp=?", params:[id]}});
+
+		if(collection_game.length == rounds_total){
+			var players = exports.getGamePlayers(id);
+			for(var p in players){
+				score = exports.getPlayerTotalScore(players[p], id)
+				result.push({"id": id, "player": players[p], "score": score, "rounds_total": rounds_total});
+			}
+		}
+	}
+	return result;
+}
 
 
 

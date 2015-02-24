@@ -9,8 +9,5 @@ function continueGame(){
 }
 
 function showHistory(){
-    var prova = Alloy.Collections.game;
-    prova.fetch();
-
-    Ti.API.info(JSON.stringify(prova));
+    openWindow(Alloy.createController("history").getView());
 }

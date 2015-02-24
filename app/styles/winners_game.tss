@@ -33,7 +33,7 @@
 		fontSize: "26dp",
 		fontWeight: "bold"
 	},
-	color: "#e05b48"
+	color: "#ccfff6"
 }
 
 "#lbl_name":{
@@ -43,7 +43,7 @@
 	font:{
 		fontSize: "22dp"
 	},
-	color: "black"
+	color: "white"
 }
 
 "#lbl_point":{
@@ -53,5 +53,5 @@
 	font:{
 		fontSize: "20dp"
 	},
-	color: "black"
+	color: "white"
 }

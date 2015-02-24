@@ -41,10 +41,6 @@ function insertIntoRow(){
 	return data;
 }
 
-function formatDate(timestamp){
-	var date = new Date(timestamp);
-	return (date.getDay()+1) + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + " " + (date.getHours()+1) + ":"+ (date.getMinutes()+1);
-}
 
 function deleteFromList(){
 	if(!$.b_trash.select){
