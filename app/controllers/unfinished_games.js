@@ -7,7 +7,6 @@ $.listView.addEventListener("itemclick", function(e){
 	var item = e.section.getItemAt(e.itemIndex);
 	Ti.API.info(JSON.stringify(item));
 	if(!$.b_trash.select){
-		//TODO start playing game
 		Alloy.Globals.GAME_TIMESTAMP = parseFloat(item["lbl_date"]["id"]);
 		Alloy.Globals.ROUNDS = (parseInt(item["lbl_round_ok"]["text"]) + parseInt(item["lbl_round_ko"]["text"]));
 		var lsPlayers = db.getGamePlayers(item["lbl_date"]["id"]);

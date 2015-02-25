@@ -1,0 +1,34 @@
+"Label":{
+    color: "white",
+    top: 0,
+    bottom: 0
+}
+
+"#v_container":{
+    layout: "vertical"
+}
+
+
+"Label":{
+    color: "white"
+}
+
+"#v_row":{
+    left: 0,
+    right: 0,
+    height: "60dp",
+    layout: "horizontal"
+}
+
+"#lbl_name":{
+    left: "20dp",
+    width: "120dp"
+}
+
+".cls_points":{
+    left: "10dp",
+    top: 0,
+    bottom: 0,
+    width: "60dp"
+}
+

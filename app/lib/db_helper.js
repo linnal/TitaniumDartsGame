@@ -198,13 +198,37 @@ exports.getFinishedGames = function(){
 		collection_game.fetch({query:{statement: "SELECT DISTINCT round FROM game WHERE timestamp=?", params:[id]}});
 
 		if(collection_game.length == rounds_total){
+			var arr_players = [];
 			var players = exports.getGamePlayers(id);
 			for(var p in players){
+
 				score = exports.getPlayerTotalScore(players[p], id)
-				result.push({"id": id, "player": players[p], "score": score, "rounds_total": rounds_total});
+				arr_players.push({"name": players[p], "score": score});
 			}
+
+			result.push({"id": id, "players": arr_players,"rounds_total": rounds_total});
 		}
 	}
+	return result;
+}
+
+
+exports.getGameHistory = function(id){
+	var result = {};
+	var collection_game = Alloy.Collections.game;
+	collection_game.fetch({query:{statement: "SELECT * FROM game WHERE timestamp=?", params:[id]}});
+
+	for(var i=0; i<collection_game.length; i++){
+		var res = collection_game.at(i);
+		var round = res.get("round");
+		var d = {"name": res.get("player"), "score": res.get("score")};
+		if(result[round]){
+			result[round].push(d);
+		}else{
+			result[round] = [d];
+		}
+	}
+
 	return result;
 }
 

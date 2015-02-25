@@ -1,0 +1,25 @@
+<Alloy>
+    <Window id="win_game_history">
+        <View id="v_shandow"></View>
+        <View id="v_container">
+            <View id="v_intro">
+                <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
+                <Label id="lbl_intro">Game History</Label>
+            </View>
+
+            <ListView id="listView" defaultItemTemplate="template">
+                <Templates>
+                    <ItemTemplate name="template"  id="template">
+                            <View id="v_row">
+                                <Label bindId="lbl_name" id="lbl_name"></Label>
+                                <Label bindId="lbl_first" id="lbl_first" class="cls_points"></Label>
+                                <Label bindId="lbl_second" id="lbl_second" class="cls_points"></Label>
+                                <Label bindId="lbl_third" id="lbl_third" class="cls_points"></Label>
+                            </View>
+                    </ItemTemplate>
+                </Templates>
+            </ListView>
+
+        </View>
+    </Window>
+</Alloy>

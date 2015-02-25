@@ -1,20 +1,27 @@
 var db = require("db_helper");
 var anim = require("animate");
 
-var section = Ti.UI.createListSection({items: insertIntoRow()});
-$.listView.sections = [section];
-
+var section = null;
 
 $.listView.addEventListener("itemclick", function(e){
-    var item = section.getItemAt(e.itemIndex);
-    Ti.API.info(JSON.stringify(item));
+    var item = e.section.getItemAt(e.itemIndex);
+    if(!$.b_trash.select){
+        Alloy.Globals.GAME_TIMESTAMP = parseFloat(item["lbl_date"]["id"]);
+        openWindow(Alloy.createController("game_history").getView());
+    }else{
+        e.section.deleteItemsAt(e.itemIndex, 1, []);
+        db.deleteGame(item["lbl_date"]["id"]);
+        if(e.section.items.length == 0){
+            $.win_unfinished_game.close();
+        }
+    }
 });
 
 
-for(var i=0; i<section.items.length; i++){
-    var item = section.getItemAt(i);
-    Ti.API.info(JSON.stringify(item));
-}
+$.win_history.addEventListener('open', function(){
+    section = Ti.UI.createListSection({items: insertIntoRow()});
+    $.listView.sections = [section];
+});
 
 
 function insertIntoRow(){
@@ -30,7 +37,7 @@ function insertIntoRow(){
             "b_del":{"visible": false},
             "b_more":{"backgroundImage": "/expand.png"},
             "b_view_table": {"visible": false},
-            "v_players":{"name": pendingGames[i]["player"], "score": pendingGames[i]["score"], backgroundColor: "red"},
+            // "v_players":{"name": pendingGames[i]["player"], "score": pendingGames[i]["score"], backgroundColor: "red"},
             "properties" : {
                 //height : '150dp',
                 "height" : "100dp",
@@ -96,16 +103,16 @@ function createViewRoundPlayer(name, score){
 function showMore(e){
     var item = section.getItemAt(e.itemIndex);
 
-    var anim_rotate = anim.rotate(180);
-    item.b_more.animation = anim_rotate;
+    // var anim_rotate = anim.rotate(180);
+    // item.b_more.animation = anim_rotate;
     if(item.properties.height == "100dp"){
         Ti.API.info("HEIGHT 100 up");
-        item.b_more.backgroundImage = "/expand.png";
+        item.b_more.backgroundImage = "/lessen.png";
         item.properties.height = "200dp";
         item.b_view_table.visible = true;
     }else{
         Ti.API.info("HEIGHT 200 down");
-        item.b_more.backgroundImage = "/lessen.png";
+        item.b_more.backgroundImage = "/expand.png";
         item.properties.height = "100dp";
         item.b_view_table.visible = false;
     }
@@ -115,5 +122,5 @@ function showMore(e){
 
 
 function closeWin(){
-    closeWindow($.win_history)
+    closeWindow($.win_history);
 }
