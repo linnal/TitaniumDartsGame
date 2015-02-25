@@ -9,19 +9,15 @@
 "#listView":{
     backgroundColor: "transparent",
     separatorColor: "transparent",
+    height: Ti.UI.SIZE
 }
 
-"#template":{
-    height: "100dp",
-    backgroundColor: "transparent"
-}
 
 "#row":{
     top:0,
     bottom:0,
     left:0,
-    right:0,
-    backgroundColor: "yellow",
+    right:0
 }
 
 
@@ -66,11 +62,13 @@
 "#b_view_table":{
     bottom: 0,
     right: "10dp",
-    width: "70dp",
+    width: "130dp",
     height: "30dp",
-    text: "asdfsd",
-    backgroundColor: "yellow",
-    visible: false
+    title: "Show more",
+    backgroundColor: "#334D5C",
+    borderRound: 5,
+    visible: false,
+    color: "white"
 }
 
 

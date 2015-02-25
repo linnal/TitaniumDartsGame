@@ -1,10 +1,13 @@
 var db = require("db_helper");
+var anim = require("animate");
+
 var section = Ti.UI.createListSection({items: insertIntoRow()});
 $.listView.sections = [section];
 
 
 $.listView.addEventListener("itemclick", function(e){
-    Ti.API.info(JSON.stringify(e))
+    var item = section.getItemAt(e.itemIndex);
+    Ti.API.info(JSON.stringify(item));
 });
 
 
@@ -28,8 +31,11 @@ function insertIntoRow(){
             "b_more":{"backgroundImage": "/expand.png"},
             "b_view_table": {"visible": false},
             "v_players":{"name": pendingGames[i]["player"], "score": pendingGames[i]["score"], backgroundColor: "red"},
-            "b_row": {"backgroundColor": "yellow"},
-            "templ": {"backgroundColor": "transparent"}
+            "properties" : {
+                //height : '150dp',
+                "height" : "100dp",
+                "backgroundColor": "transparent"
+            }
         });
     }
     return data;
@@ -89,19 +95,22 @@ function createViewRoundPlayer(name, score){
 
 function showMore(e){
     var item = section.getItemAt(e.itemIndex);
-    Ti.API.info("item " + JSON.stringify(item));
 
-    var animation = Titanium.UI.createAnimation({
-        // height : '200dp',
-        backgroundColor: "black",
-        duration : 1000
-    });
+    var anim_rotate = anim.rotate(180);
+    item.b_more.animation = anim_rotate;
+    if(item.properties.height == "100dp"){
+        Ti.API.info("HEIGHT 100 up");
+        item.b_more.backgroundImage = "/expand.png";
+        item.properties.height = "200dp";
+        item.b_view_table.visible = true;
+    }else{
+        Ti.API.info("HEIGHT 200 down");
+        item.b_more.backgroundImage = "/lessen.png";
+        item.properties.height = "100dp";
+        item.b_view_table.visible = false;
+    }
 
-    // item.row.animation = animation;
-    item.b_row.animation = animation;
-    // item.v_players.animation = animation;
-    // item.templ.width = "200dp";
-    section.updateItemAt(e.itemIndex, item);
+        section.updateItemAt(e.itemIndex, item);
 }
 
 
