@@ -3,20 +3,6 @@ var anim = require("animate");
 
 var section = null;
 
-$.listView.addEventListener("itemclick", function(e){
-    var item = e.section.getItemAt(e.itemIndex);
-    if(!$.b_trash.select){
-        Alloy.Globals.GAME_TIMESTAMP = parseFloat(item["lbl_date"]["id"]);
-        openWindow(Alloy.createController("game_history").getView());
-    }else{
-        e.section.deleteItemsAt(e.itemIndex, 1, []);
-        db.deleteGame(item["lbl_date"]["id"]);
-        if(e.section.items.length == 0){
-            $.win_unfinished_game.close();
-        }
-    }
-});
-
 
 $.win_history.addEventListener('open', function(){
     section = Ti.UI.createListSection({items: insertIntoRow()});
@@ -118,6 +104,20 @@ function showMore(e){
     }
 
         section.updateItemAt(e.itemIndex, item);
+}
+
+function openGameHistory(e){
+    var item = e.section.getItemAt(e.itemIndex);
+    if(!$.b_trash.select){
+        Alloy.Globals.GAME_TIMESTAMP = parseFloat(item["lbl_date"]["id"]);
+        openWindow(Alloy.createController("game_history").getView());
+    }else{
+        e.section.deleteItemsAt(e.itemIndex, 1, []);
+        db.deleteGame(item["lbl_date"]["id"]);
+        if(e.section.items.length == 0){
+            $.win_unfinished_game.close();
+        }
+    }
 }
 
 

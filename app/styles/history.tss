@@ -38,7 +38,7 @@
     left: 0,
     right: "60dp",
     top:"50dp",
-    backgroundColor: "red",
+    //backgroundColor: "red",
     layout: "horizontal"
 }
 

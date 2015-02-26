@@ -1,17 +1,21 @@
 "Label":{
     color: "white",
-    top: 0,
-    bottom: 0
+    height: Ti.UI.SIZE,
+    font:{
+        fontSize: "20dp"
+    }
 }
 
 "#v_container":{
     layout: "vertical"
 }
 
-
-"Label":{
-    color: "white"
+"#listView":{
+    backgroundColor: "transparent",
+    separatorColor: "#29695b",
+    height: Ti.UI.SIZE
 }
+
 
 "#v_row":{
     left: 0,
@@ -20,15 +24,46 @@
     layout: "horizontal"
 }
 
+"#v_lbl_name":{
+    left: 0,
+    height: "60dp",
+    width: "140dp"
+}
+
+"#v_devider":{
+    bottom: 0,
+    height: "10dp",
+    left: 0,
+    right: 0,
+    backgroundColor: "#ae5b50"
+}
+
+"#img_star":{
+    image: "/star.png",
+    visible: false,
+    left: 0,
+    width: "40dp",
+    height: "40dp"
+}
+
 "#lbl_name":{
-    left: "20dp",
-    width: "120dp"
+    left: "40dp",
+    width: "100dp",
+    height: "60dp",
+    font:{
+        fontSize: "20dp"
+    }
 }
 
 ".cls_points":{
     left: "10dp",
-    top: 0,
-    bottom: 0,
-    width: "60dp"
+    width: "60dp",
+    font:{
+        fontWeight: "bold",
+        fontSize: "20dp"
+    },
+    //backgroundColor: "red",
+    height: "60dp",
+    textAlign: "center"
 }
 

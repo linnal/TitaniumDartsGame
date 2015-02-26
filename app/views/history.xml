@@ -11,10 +11,10 @@
                 <Templates>
                     <ItemTemplate name="template"  id="template">
                         <View id="row">
-                            <Label bindId="lbl_date" id="lbl_date"></Label>
-                            <Label bindId="lbl_rounds" id="lbl_rounds"></Label>
-                            <View bindId="v_players" id="v_players"></View>
-                            <Button bindId="b_del" id="b_del"></Button>
+                            <Label bindId="lbl_date" id="lbl_date" onClick="openGameHistory"></Label>
+                            <Label bindId="lbl_rounds" id="lbl_rounds" onClick="openGameHistory"></Label>
+                            <View bindId="v_players" id="v_players" onClick="openGameHistory"></View>
+                            <Button bindId="b_del" id="b_del" onClick="openGameHistory"></Button>
                             <Button bindId="b_more" id="b_more" onClick="showMore"></Button>
                             <Button bindId="b_view_table" id="b_view_table"></Button>
                         </View>

@@ -19,7 +19,15 @@
     left: 0,
     right:0,
     height: "50dp",
-    backgroundColor: "#334D5C"
+    //backgroundColor: "#334D5C"
+    backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint:   { x: '50%', y: '100%' },
+        colors: [
+                    { color: '#334D5C', offset: 0.25 },
+                    { color: '#383a46', offset: 1.0 } ],
+    }
 }
 
 
