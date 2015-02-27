@@ -13,23 +13,30 @@ $.win_history.addEventListener('open', function(){
 function insertIntoRow(){
 
     var pendingGames = (db.getFinishedGames());
-    Ti.API.info(JSON.stringify(pendingGames));
+    // Ti.API.info(JSON.stringify(pendingGames));
     var data = [];
 
     for(var i=0; i<pendingGames.length; i++){
-        data.push({
+        var container = {
             "lbl_date":{"text": formatDate(pendingGames[i]["id"]), "id": parseFloat(pendingGames[i]["id"])},
             "lbl_rounds":{"text": pendingGames[i]["rounds_total"] + " ROUNDS"},
             "b_del":{"visible": false},
             "b_more":{"backgroundImage": "/expand.png"},
             "b_view_table": {"visible": false},
-            // "v_players":{"name": pendingGames[i]["player"], "score": pendingGames[i]["score"], backgroundColor: "red"},
             "properties" : {
-                //height : '150dp',
                 "height" : "100dp",
                 "backgroundColor": "transparent"
             }
-        });
+        };
+
+        var v_children = [];
+        for(var j=0; j<pendingGames[i].players.length; j++){
+            v_children.push(createViewPlayer(pendingGames[i].players[j].name, pendingGames[i].players[j].score));
+        }
+
+        container["v_players"] = {"children" : v_children};
+
+        data.push(container);
     }
     return data;
 }
@@ -77,7 +84,7 @@ function createViewRoundPlayer(name, score){
     var score = Ti.UI.createLabel({
         text: score,
         textAlign: "center"
-    })
+    });
 
     view.add(name);
     view.add(score);
@@ -118,6 +125,40 @@ function openGameHistory(e){
             $.win_unfinished_game.close();
         }
     }
+}
+
+function test(e){
+    Ti.API.info(JSON.stringify(e.source));
+    Ti.API.info(JSON.stringify(e.source.children));
+}
+
+function createViewPlayer(name, score){
+    var name= Ti.UI.createLabel({
+        text: name + " " + score,
+        color: "white",
+        textAlign: "center",
+        // backgroundColor: "yellow",
+        width: "auto",
+        height: "35dp",
+        font:{
+            fontSize: "10dp"
+        }
+    });
+
+
+    var view = Ti.UI.createView({
+        width: "70dp",
+        height: "70dp",
+        left: "10dp",
+        layout: "vertical",
+        // backgroundColor: "blue"
+        backgroundImage: "/icon_img.png"
+    });
+
+    view.add(name);
+    // view.add(score);
+
+    return view;
 }
 
 

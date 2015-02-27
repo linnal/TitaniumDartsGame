@@ -9,6 +9,7 @@
     		<ListView id="listView" defaultItemTemplate="template">
                 <Templates>
                     <ItemTemplate name="template" id="template">
+                        <View id="v_rowshadow"></View>
                     	<View id="row" layout="horizontal">
                         	<Label bindId="lbl_pos" id="lbl_pos" />
                         	<Label bindId="lbl_name" id="lbl_name" />

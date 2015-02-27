@@ -2,7 +2,7 @@
     <Window id="win_history">
         <View id="v_shandow"></View>
         <View id="v_container">
-            <View id="v_intro">
+            <View id="v_intro" onClick="test">
                 <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
                 <Label id="lbl_intro">Game History</Label>
                 <Button id="b_trash" onClick="deleteFromList"></Button>
@@ -10,13 +10,14 @@
             <ListView id="listView" defaultItemTemplate="template">
                 <Templates>
                     <ItemTemplate name="template"  id="template">
+                        <View id="v_rowshadow"></View>
                         <View id="row">
                             <Label bindId="lbl_date" id="lbl_date" onClick="openGameHistory"></Label>
                             <Label bindId="lbl_rounds" id="lbl_rounds" onClick="openGameHistory"></Label>
-                            <View bindId="v_players" id="v_players" onClick="openGameHistory"></View>
+                            <View bindId="v_players" id="v_players" onClick="test"></View>
                             <Button bindId="b_del" id="b_del" onClick="openGameHistory"></Button>
                             <Button bindId="b_more" id="b_more" onClick="showMore"></Button>
-                            <Button bindId="b_view_table" id="b_view_table"></Button>
+                            <Button bindId="b_view_table" id="b_view_table" class="bckGradient"></Button>
                         </View>
                     </ItemTemplate>
                 </Templates>

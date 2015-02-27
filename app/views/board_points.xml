@@ -65,7 +65,7 @@
 
 	     </View>
 
-	     	<View id="v_next_round" onClick="nextRound">
+	     	<View id="v_next_round" class="bckGradient" onClick="nextRound">
 	        	<Label id="lbl_next_round">Next Round</Label>
 	        </View>
 

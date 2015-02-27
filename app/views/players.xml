@@ -27,7 +27,7 @@
 					<Button id="b_add" onClick="addNewPlayer"></Button>
 				</View>
 
-				<Button id="b_next" class="b_large" onClick="next">Next</Button>
+				<Button id="b_next" class="b_large bckGradient" onClick="next">Next</Button>
 			</View>
 			<View id="v_set_rpund" class="sv_views">
 				<View id="v_intro">
@@ -38,7 +38,7 @@
 				<View id="v_content_round">
 					<ImageView id="img_what"></ImageView>
 					<View id="v_box">
-						<View id="v_button">
+						<View id="v_button" class="bckGradient">
 							<Button id="b_minus" onClick="decrementRound"></Button>
 							<Button id="b_plus" onClick="incrementRound"></Button>
 						</View>
@@ -48,7 +48,7 @@
 					</View>
 				</View>
 
-				<Button id="b_start" class="b_large" onClick="startGame">Start</Button>
+				<Button id="b_start" class="b_large bckGradient" onClick="startGame">Start</Button>
 			</View>
 		</ScrollableView>
 

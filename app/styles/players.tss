@@ -109,7 +109,7 @@
 	left: "20dp",
 	right: "20dp",
 	height: "50dp",
-	backgroundColor: "#334D5C",
+	//backgroundColor: "#334D5C",
 	color: "white",
 	font:{
 		fontSize: "22dp",
@@ -158,7 +158,7 @@
 	height: "50dp",
 	left: 0,
 	right: 0,
-	backgroundColor: "#334D5C",
+	//backgroundColor: "#334D5C",
 	bottom: 0,
 	borderRadius: 5
 }

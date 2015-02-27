@@ -66,9 +66,9 @@ function savePlayerScore(name, round, score, color){
 		score = (sc[0] > -1 ? sc[0] : 0);
 		score += "," + (sc[1] > -1 ? sc[1] : 0);
 		score += "," + (sc[2] > -1 ? sc[2] : 0);
-	}
 
-	db.setGamePlayerScore(name, round, score, color, Alloy.Globals.GAME_TIMESTAMP);
+		db.setGamePlayerScore(name, round, score, color, Alloy.Globals.GAME_TIMESTAMP);
+	}
 }
 
 
@@ -275,24 +275,40 @@ function nextRound(){
 	Ti.API.info(unscoredPlayers.join(","));
 	if(unscoredPlayers.length > 1 || ($.b_point_1.text + $.b_point_2.text + $.b_point_3.text) < 0){
 		alert("You have not scored " +  unscoredPlayers.join(", ") + " yet. Please score them before going to Round " + (round+1));
-	}else{
-		var nextRound = round + 1;
-		if(nextRound < Alloy.Globals.ROUNDS + 1){
-			resetGame();
-
-			round += 1;
-			$.lbl_round.text = "Round " + nextRound;
-			$.lbl_remaining_rounds.text = parseInt($.lbl_remaining_rounds.text) - 1;
-			checkForNextRound();
-
-			createNextRound();
-		}else{
-			resetGame();
-			openWindow(Alloy.createController("winners_game").getView());
+	}else if(unscoredPlayers.length == 1 ){
+		Ti.API.info("name1 " + unscoredPlayers[0]);
+		if(lsSelectedRowIndex != null){
+			var item = section.getItemAt(lsSelectedRowIndex);
+			var not_settedName = item["lbl_name"]["text"];
+			if(unscoredPlayers[0] != not_settedName){
+				alert("You have not scored " +  unscoredPlayers[0] + " yet. Please score them before going to Round " + (round+1));
+			}else{
+				goNextRound();
+			}
 		}
+
+	}else{
+		goNextRound();
 	}
 }
 
+
+function goNextRound(){
+	var nextRound = round + 1;
+	if(nextRound < Alloy.Globals.ROUNDS + 1){
+		resetGame();
+
+		round += 1;
+		$.lbl_round.text = "Round " + nextRound;
+		$.lbl_remaining_rounds.text = parseInt($.lbl_remaining_rounds.text) - 1;
+		checkForNextRound();
+
+		createNextRound();
+	}else{
+		resetGame();
+		openWindow(Alloy.createController("winners_game").getView());
+	}
+}
 
 function closeWin(){
 	closeWindow($.win_board_point);

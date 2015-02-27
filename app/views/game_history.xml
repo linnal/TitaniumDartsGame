@@ -10,16 +10,16 @@
             <ListView id="listView" defaultItemTemplate="template">
                 <Templates>
                     <ItemTemplate name="template"  id="template">
-                            <View id="v_row">
-                                <View id="v_lbl_name">
-                                    <ImageView bindId="img_star" id="img_star"></ImageView>
-                                    <View id="v_devider"></View>
-                                    <Label bindId="lbl_name" id="lbl_name"></Label>
-                                </View>
-                                <Label bindId="lbl_first" id="lbl_first" class="cls_points"></Label>
-                                <Label bindId="lbl_second" id="lbl_second" class="cls_points"></Label>
-                                <Label bindId="lbl_third" id="lbl_third" class="cls_points"></Label>
+                        <View id="v_row">
+                            <View id="v_lbl_name">
+                                <ImageView bindId="img_star" id="img_star"></ImageView>
+                                <View id="v_devider"></View>
+                                <Label bindId="lbl_name" id="lbl_name"></Label>
                             </View>
+                            <Label bindId="lbl_first" id="lbl_first" class="cls_points"></Label>
+                            <Label bindId="lbl_second" id="lbl_second" class="cls_points"></Label>
+                            <Label bindId="lbl_third" id="lbl_third" class="cls_points"></Label>
+                        </View>
                     </ItemTemplate>
                 </Templates>
             </ListView>

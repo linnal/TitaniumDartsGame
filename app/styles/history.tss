@@ -65,8 +65,8 @@
     width: "130dp",
     height: "30dp",
     title: "Show more",
-    backgroundColor: "#334D5C",
-    borderRound: 5,
+    //backgroundColor: "#334D5C",
+    borderRadius: 5,
     visible: false,
     color: "white"
 }

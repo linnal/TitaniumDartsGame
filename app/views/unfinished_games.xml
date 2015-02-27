@@ -10,6 +10,7 @@
     		<ListView id="listView" defaultItemTemplate="template">
     			<Templates>
                     <ItemTemplate name="template" id="template">
+                        <View id="v_rowshadow"></View>
                     	<View id="row">
                         	<Label bindId="lbl_date" id="lbl_date"></Label>
                         	<View id="v_rounds">

@@ -30,6 +30,21 @@
     }
 }
 
+".bckGradient":{
+    backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint:   { x: '50%', y: '100%' },
+        colors: [
+                    { color: '#334D5C', offset: 0.25 },
+                    { color: '#383a46', offset: 1.0 } ],
+    }
+}
+
+"#template":{
+    selectedBackgroundColor: "transparent"
+}
+
 
 "#lbl_back":{
     left: "5dp",
@@ -80,4 +95,17 @@
     backgroundImage: "/trash_idle.png",
     select: false
 }
+
+"#v_rowshadow":{
+    top:"5dp",
+    left:"5dp",
+    right:"5dp",
+    bottom: "5dp",
+    backgroundColor: "black",
+    opacity: "0.3",
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#29695b"
+}
+
 
