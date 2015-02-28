@@ -9,3 +9,13 @@ exports.rotate = function(degrees){
 
     return animation;
 }
+
+exports.move = function(degrees){
+    var animation = Ti.UI.createAnimation({
+        duration : 1000,
+        backgroundColor : 'black',
+        autoreverse: true
+    });
+
+    return animation;
+}

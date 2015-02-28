@@ -1,0 +1,15 @@
+<Alloy>
+    <Window id="win_history_tbl">
+        <View id="v_shandow"></View>
+        <View id="v_container">
+            <View id="v_intro">
+                <Label id="lbl_back" platform="ios" onClick="closeWin"></Label>
+                <Label id="lbl_intro">Game History</Label>
+                <Button id="b_trash" onClick="deleteFromList"></Button>
+            </View>
+            <TableView id="tableView" onClick="onTableClick">
+
+            </TableView>
+        </View>
+    </Window>
+</Alloy>

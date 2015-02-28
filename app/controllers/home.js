@@ -9,5 +9,5 @@ function continueGame(){
 }
 
 function showHistory(){
-    openWindow(Alloy.createController("history").getView());
+    openWindow(Alloy.createController("history_tbl").getView());
 }

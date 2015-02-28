@@ -1,0 +1,13 @@
+<Alloy>
+    <View id="v_row_container">
+        <View id="v_rowshadow"></View>
+        <View id="row">
+            <Label id="lbl_date"></Label>
+            <Label id="lbl_rounds"></Label>
+            <View id="v_players" ></View>
+            <Button id="b_del"></Button>
+            <Button  id="b_more"></Button>
+            <Button id="b_view_table" class="bckGradient" onClick="showMore"></Button>
+        </View>
+    </View>
+</Alloy>

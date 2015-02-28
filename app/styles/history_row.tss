@@ -2,22 +2,12 @@
     color: "white"
 }
 
-"#v_container":{
-    layout: "vertical"
-}
-
-"#listView":{
-    backgroundColor: "transparent",
-    separatorColor: "transparent",
-    height: Ti.UI.SIZE
-}
-
-
 "#row":{
     top:0,
     bottom:0,
     left:0,
-    right:0
+    right:0,
+    idGame:0
 }
 
 
@@ -26,12 +16,14 @@
     left: "10dp",
     font:{
         fontSize: "22dp"
-    }
+    },
+    touchEnabled: false
 }
 
 "#lbl_rounds":{
     top: "10dp",
-    right: "60dp"
+    right: "60dp",
+    touchEnabled: false
 }
 
 "#v_players":{
@@ -56,7 +48,7 @@
     right: "10dp",
     width: "40dp",
     height: "40dp",
-    backgroundImage: "/more.png"
+    backgroundImage: "/expand.png"
 }
 
 "#b_view_table":{
@@ -70,10 +62,3 @@
     visible: false,
     color: "white"
 }
-
-
-
-
-
-
-

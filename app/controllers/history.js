@@ -1,5 +1,5 @@
 var db = require("db_helper");
-var anim = require("animate");
+//var anim = require("animate");
 
 var section = null;
 

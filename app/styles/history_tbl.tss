@@ -1,0 +1,13 @@
+"Label":{
+    color: "white"
+}
+
+"#v_container":{
+    layout: "vertical"
+}
+
+"#tableView":{
+    backgroundColor: "transparent",
+    separatorColor: "transparent",
+    height: Ti.UI.SIZE
+}
