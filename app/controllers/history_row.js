@@ -38,8 +38,8 @@ function createViewPlayer(name, score){
 
 
     var view = Ti.UI.createView({
-        width: "50dp",
-        height: "50dp",
+        width: "60dp",
+        height: "60dp",
         left: "10dp",
         layout: "vertical",
         backgroundImage: "/icon_img.png",

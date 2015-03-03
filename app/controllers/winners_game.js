@@ -11,17 +11,14 @@ function insertIntoRow(){
 
  	var values = [];
  	for(var i in lsPlayers){
- 		Ti.API.info("==> " + lsPlayers[i]);
  		values.push(lsPlayers[i]);
  	}
 
  	values.sort();
- 	Ti.API.info("==> " + JSON.stringify(values));
 
 	while(values.length > 0){
 		var max = values.shift();
 		for(var i in lsPlayers){
-			Ti.API.info(i + "  " + lsPlayers[i]);
 			if(lsPlayers[i] == max){
 				count += 1;
 				var dict = {};

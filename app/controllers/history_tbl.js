@@ -45,7 +45,11 @@ function onTableClick(e){
             e.row.children[0].children[1].children[5].visible = true;
         }
     }else if(e.source.id == "b_del"){
-
+        $.tableView.deleteRow(e.row);
+        db.deleteGame(e.row.children[0].children[1].idGame);
+    }else{
+        // Alloy.Globals.GAME_TIMESTAMP = parseFloat(e.row.children[0].children[1].idGame);
+        // openWindow(Alloy.createController("game_history").getView());
     }
 }
 

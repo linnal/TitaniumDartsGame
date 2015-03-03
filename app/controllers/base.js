@@ -30,7 +30,6 @@ closeWindow = function(win){
     }else{
         win.close({animated: true});
     }
-
 };
 
 goBackHome = function(){
@@ -51,6 +50,7 @@ goBackHome = function(){
 
 formatDate= function(timestamp){
     var date = new Date(timestamp);
-    return (date.getDay()+1) + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + " " + (date.getHours()+1) + ":"+ (date.getMinutes()+1);
+    var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return (date.getDay()+1) + " " + (month[date.getMonth()]) + " " + date.getFullYear() + " " + date.getHours() + ":"+ ((date.getMinutes()+1)>10 ? (date.getMinutes()+1) : "0" + (date.getMinutes()+1)) ;
 }
 

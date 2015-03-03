@@ -99,9 +99,10 @@ exports.getPendingGames = function(){
 		var id = collection_round.at(i).get("game_id");
 		var rounds_total = parseInt(collection_round.at(i).get("rounds"));
 		collection_game.fetch({query:{statement: "SELECT DISTINCT round FROM game WHERE timestamp=?", params:[id]}});
-
 		if(collection_game.length < rounds_total){
 			result.push({"id": parseFloat(id), "rounds_total": rounds_total, "rounds_done": collection_game.length});
+		}else if(!areAllPlayersScoreSet(id, rounds_total)){
+			result.push({"id": parseFloat(id), "rounds_total": rounds_total, "rounds_done": rounds_total});
 		}
 	}
 	return result;
@@ -145,6 +146,8 @@ exports.getGamePlayers = function(id){
 
 	return result;
 };
+
+
 
 exports.getPlayerSumScore = function(id, round){
 	var collection_game = Alloy.Collections.game;
@@ -190,7 +193,7 @@ exports.getFinishedGames = function(){
 	var result = [];
 
 	var collection_round = Alloy.Collections.game_round;
-	collection_round.fetch({query: "SELECT * FROM game_round"});
+	collection_round.fetch({query: "SELECT * FROM game_round ORDER BY game_id DESC"});
 	var collection_game = Alloy.Collections.game;
 	for(var i=0; i<collection_round.length; i++){
 		var id = parseFloat(collection_round.at(i).get("game_id"));
@@ -230,6 +233,25 @@ exports.getGameHistory = function(id){
 	}
 
 	return result;
+}
+
+
+
+areAllPlayersScoreSet = function(id, round){
+	var coll_game = Alloy.Collections.game;
+	coll_game.fetch({query:{statement: "SELECT * FROM game WHERE timestamp=? and round=?", params:[id, round]}});
+	Ti.API.info("length " + coll_game.length);
+	for(var i=0; i<coll_game.length; i++){
+		Ti.API.info(JSON.stringify(coll_game.at(i)));
+		var sc = coll_game.at(i).get("score").split(",");
+		var score = (parseInt(sc[0]) + parseInt(sc[1]) + parseInt(sc[2]));
+		Ti.API.info("Player: " + coll_game.at(i).get("player") + " Score : " + score)
+		if(score < 0) {
+			return false
+		}
+	}
+
+	return true;
 }
 
 
