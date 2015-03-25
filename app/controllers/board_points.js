@@ -258,6 +258,10 @@ function resetGame(){
 	item["v_select"]["backgroundImage"] = "/b_selected.png";
 	section.updateItemAt(lsSelectedRowIndex, item);
 
+	$.listView.scrollToItem(0, 0, {
+        animated : false
+    });
+
 }
 
 function createNextRound(){

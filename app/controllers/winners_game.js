@@ -14,7 +14,9 @@ function insertIntoRow(){
  		values.push(lsPlayers[i]);
  	}
 
- 	values.sort();
+ 	values.sort(function(a, b){return b-a});
+ 	Ti.API.info(values);
+ 	// Ti.API.info(typeof(values[0]));
 
 	while(values.length > 0){
 		var max = values.shift();
