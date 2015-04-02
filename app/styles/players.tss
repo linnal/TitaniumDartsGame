@@ -73,6 +73,13 @@
 	height: "40dp"
 }
 
+"#v_dark_shadow":{
+	bottom: 0,
+	left: 0,
+	right: 0,
+	height: "150",
+	backgroundColor: "black"
+}
 
 "#v_add_new":{
 	bottom: "70dp",

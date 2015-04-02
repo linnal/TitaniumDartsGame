@@ -165,7 +165,7 @@ function selectYellowDart(){
 }
 
 function updateScore1(e){
-	$.b_succ_1.visible = false;
+	// $.b_succ_1.visible = false;
 	$.b_point_1.borderColor = "#e75151";
 
 	if(! (parseInt($.b_point_2.text) >= 0))
@@ -178,7 +178,7 @@ function updateScore1(e){
 	lblUpdateScore = $.b_point_1;
 }
 function updateScore2(e){
-	$.b_succ_2.visible = false;
+	// $.b_succ_2.visible = false;
 	$.b_point_2.borderColor = "#e75151";
 
 	if(! (parseInt($.b_point_1.text) >= 0))
@@ -191,7 +191,7 @@ function updateScore2(e){
 	lblUpdateScore = $.b_point_2;
 }
 function updateScore3(e){
-	$.b_succ_3.visible = false;
+	// $.b_succ_3.visible = false;
 	$.b_point_3.borderColor = "#e75151";
 
 	if(! (parseInt($.b_point_2.text) >= 0))
@@ -227,6 +227,21 @@ function updateScorePoint(e){
 		section.updateItemAt(lsSelectedRowIndex, item);
 
 		selectNextPointBox(lblUpdateScore.id);
+		
+		
+		
+		if(sc1 > 0){
+			$.b_succ_1.visible = false;
+		}
+	 
+		if(sc2 > 0){
+			$.b_succ_2.visible = false;
+		}
+	 
+		if(sc3 > 0){
+			$.b_succ_3.visible = false;
+		}
+		
 	}
 }
 
