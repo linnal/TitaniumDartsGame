@@ -1,18 +1,27 @@
-Welcome to your Appcelerator Titanium Mobile Project
+TitaniumDartsGame
+=================
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+# Installation
+
+1) Follow the instructions on the [Titanium website](http://docs.appcelerator.com/titanium/latest/#!/guide/Quick_Start-section-29004949_QuickStart-YourFirstMobileApp) to set up Titanium and Titanium studio.
+
+2) Import the project in Titanium with *File -> Import* from Titanium Studio
+
+3) Navigate to the project directory in your terminal
+
+	- install the currently set sdk `titanium sdk install 3.4.1.GA`
+
+	- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
+
+# Building
+
+- `titanium build --build-only [--platform android|ios]` to build the app from the command line
 
 
+# Testing
 
-----------------------------------
-Stuff our legal folk make us say:
+- build the app `titanium build --build-only --skip-js-minify --platform android`
 
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
+- resign the apk `calabash-android resign build/android/bin/DartsGame.apk`
 
-Titanium is Copyright (c) 2008-2013 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+- run the User Acceptance Tests  `calabash-android run build/android/bin/DartsGame.apk`
