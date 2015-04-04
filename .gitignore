@@ -7,4 +7,6 @@ tmp
 .map
 .project
 .settings
-Thumbs.db
+Thumbs.dbscreenshot_0.png
+screenshot_*
+test_servers
