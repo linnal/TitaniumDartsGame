@@ -4,7 +4,7 @@
   "description": "TitaniumDartsGame",
   "main": "",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*"
+    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js"
   },
   "repository": {
     "type": "git",
