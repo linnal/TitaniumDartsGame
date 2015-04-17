@@ -1,4 +1,4 @@
-var DateFormatter = require('../app/helpers/DateFormatter.js')
+var DateFormatter = require('../app/lib/DateFormatter.js')
 
 var timestamp = 1427918400000
 var formattedDate = '1 Apr 2015 20:00'

@@ -45,12 +45,3 @@ goBackHome = function(){
     }
 	closeWindow(lastWindow);
 };
-
-
-
-formatDate= function(timestamp){
-    var date = new Date(timestamp);
-    var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return (date.getDay()+1) + " " + (month[date.getMonth()]) + " " + date.getFullYear() + " " + date.getHours() + ":"+ ((date.getMinutes()+1)>10 ? (date.getMinutes()+1) : "0" + (date.getMinutes()+1)) ;
-}
-

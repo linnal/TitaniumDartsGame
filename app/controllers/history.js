@@ -1,4 +1,5 @@
 var db = require("db_helper");
+var DateFormatter = require("DateFormatter");
 //var anim = require("animate");
 
 var section = null;
@@ -18,7 +19,7 @@ function insertIntoRow(){
 
     for(var i=0; i<pendingGames.length; i++){
         var container = {
-            "lbl_date":{"text": formatDate(pendingGames[i]["id"]), "id": parseFloat(pendingGames[i]["id"])},
+            "lbl_date":{"text": DateFormatter.format(pendingGames[i]["id"]), "id": parseFloat(pendingGames[i]["id"])},
             "lbl_rounds":{"text": pendingGames[i]["rounds_total"] + " ROUNDS"},
             "b_del":{"visible": false},
             "b_more":{"backgroundImage": "/expand.png"},

@@ -1,4 +1,5 @@
 var db = require("db_helper");
+var DateFormatter = require("DateFormatter");
 
 var section = Ti.UI.createListSection({items: insertIntoRow()});
 $.listView.sections = [section];
@@ -30,7 +31,7 @@ function insertIntoRow(){
 
 	for(var i=0; i<pendingGames.length; i++){
 		data.push({
-			"lbl_date":{"text": formatDate(pendingGames[i]["id"]), "id": parseFloat(pendingGames[i]["id"])},
+			"lbl_date":{"text": DateFormatter.format(pendingGames[i]["id"]), "id": parseFloat(pendingGames[i]["id"])},
 			"lbl_rounds":{"text": pendingGames[i]["rounds_total"] + " ROUNDS"},
 			"lbl_round_ok":{"text": pendingGames[i]["rounds_done"]},
 			"lbl_round_ko":{"text": pendingGames[i]["rounds_total"]-pendingGames[i]["rounds_done"]},
