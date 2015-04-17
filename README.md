@@ -13,6 +13,10 @@ TitaniumDartsGame
 
 	- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
 
+    - install [NodeJS](http://nodejs.org/)
+
+        - install the dependencies for the tests `npm install`
+
 # Building
 
 - `titanium build --build-only [--platform android|ios]` to build the app from the command line
