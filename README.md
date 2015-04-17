@@ -9,13 +9,13 @@ TitaniumDartsGame
 
 3) Navigate to the project directory in your terminal
 
-	- install the currently set sdk `titanium sdk install 3.4.1.GA`
+- install the currently set sdk `titanium sdk install 3.4.1.GA`
 
-	- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
+- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
 
-    - install [NodeJS](http://nodejs.org/)
+- install [NodeJS](http://nodejs.org/)
 
-        - install the dependencies for the tests `npm install`
+    - install the dependencies for the tests `npm install`
 
 # Building
 
