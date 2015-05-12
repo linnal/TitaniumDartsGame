@@ -12,3 +12,5 @@ screenshot_*
 test_servers
 calabash.framework
 Calabash
+node_modules
+node_modules

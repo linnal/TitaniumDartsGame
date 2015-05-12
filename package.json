@@ -1,0 +1,23 @@
+{
+  "name": "TitaniumDartsGame",
+  "version": "1.0.0",
+  "description": "TitaniumDartsGame",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linnal/TitaniumDartsGame.git"
+  },
+  "author": "",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/linnal/TitaniumDartsGame/issues"
+  },
+  "homepage": "https://github.com/linnal/TitaniumDartsGame",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  }
+}

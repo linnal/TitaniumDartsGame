@@ -1,7 +1,8 @@
 var data = arguments[0].data || {};
+var DateFormatter = require("DateFormatter");
 
 
-$.lbl_date.text = formatDate(data.id);
+$.lbl_date.text = DateFormatter.format(data.id);
 $.lbl_rounds.text = data.rounds_total + " ROUNDS";
 $.row.idGame = data.id;
 

@@ -9,9 +9,13 @@ TitaniumDartsGame
 
 3) Navigate to the project directory in your terminal
 
-	- install the currently set sdk `titanium sdk install 3.4.1.GA`
+- install the currently set sdk `titanium sdk install 3.4.1.GA`
 
-	- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
+- install the acceptance test runner/framework calabash `sudo gem install calabash-cucumber`
+
+- install [NodeJS](http://nodejs.org/)
+
+    - install the dependencies for the tests `npm install`
 
 # Building
 
@@ -19,6 +23,21 @@ TitaniumDartsGame
 
 
 # Testing
+
+## Unit tests
+
+Run the unit tests with `npm test`
+
+The unit tests are located in the `test/` directory and have the extension `*.test.js`
+
+The test runner is [mocha](http://mochajs.org/)
+
+
+## User acceptance tests
+
+You can either run them manually following the steps mentioned below or run `sh test/uat.sh`.
+
+#### steps
 
 - build the app `titanium build --build-only --skip-js-minify --platform android`
 
